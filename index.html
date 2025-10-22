@@ -14,6 +14,15 @@
                 <h1>ZOTTA GENERAL SERVICE</h1>
                 <p class="tagline">Movimento terra dal 1975</p>
             </div>
+            
+            <!-- Checkbox per il menu hamburger -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
+            
             <ul class="nav-menu">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#servizi">SERVIZI</a></li>
@@ -146,59 +155,53 @@
     </section>
 
     <!-- Sezione Contatti -->
-<section id="contatti" class="contact">
-    <div class="container">
-        <h2 class="section-title">CONTATTACI</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Richiedi un preventivo gratuito</h3>
-                <p>Siamo a tua disposizione per qualsiasi informazione o per un sopralluogo gratuito</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <strong>📞 Telefono:</strong>
-                        <p>+39 02 1234567</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>✉️ Email:</strong>
-                        <p>info@zottageneralservice.it</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📍 Sede:</strong>
-                        <p>Via Example 123, Milano</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>⏰ Orari:</strong>
-                        <p>Lun-Ven: 8:00-18:00<br>Sab: 8:00-12:00</p>
+    <section id="contatti" class="contact">
+        <div class="container">
+            <h2 class="section-title">CONTATTACI</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Richiedi un preventivo gratuito</h3>
+                    <p>Siamo a tua disposizione per qualsiasi informazione o per un sopralluogo gratuito</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>📞 Telefono:</strong>
+                            <p>+39 02 1234567</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>✉️ Email:</strong>
+                            <p>info@zottageneralservice.it</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📍 Sede:</strong>
+                            <p>Via Example 123, Milano</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>⏰ Orari:</strong>
+                            <p>Lun-Ven: 8:00-18:00<br>Sab: 8:00-12:00</p>
+                        </div>
                     </div>
                 </div>
+                
+                <form class="contact-form" action="https://formspree.io/f/mzzjldjk" method="POST">
+                    <input type="hidden" name="_subject" value="Nuova richiesta da Zotta General Service">
+                    <input type="hidden" name="_next" value="https://tuosito.github.io/grazie.html">
+                    
+                    <input type="text" name="name" placeholder="Nome e Cognome" required>
+                    <input type="email" name="_replyto" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Telefono" required>
+                    <textarea rows="5" name="message" placeholder="Messaggio" required></textarea>
+                    
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="submit-button">INVIA RICHIESTA</button>
+                </form>
             </div>
             
-            <!-- FORM MODIFICATO CON FORMSPREE -->
-            <form class="contact-form" action="https://formspree.io/f/mzzjldjk" method="POST">
-                <!-- Campo nascosto per personalizzare l'oggetto dell'email -->
-                <input type="hidden" name="_subject" value="Nuova richiesta da Zotta General Service">
-                
-                <!-- Campo nascosto per reindirizzare dopo l'invio (opzionale) -->
-                <input type="hidden" name="_next" value="https://tuosito.github.io/grazie.html">
-                
-                <input type="text" name="name" placeholder="Nome e Cognome" required>
-                <input type="email" name="_replyto" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Telefono" required>
-                <textarea rows="5" name="message" placeholder="Messaggio" required></textarea>
-                
-                <!-- Honeypot per bloccare spam bot -->
-                <input type="text" name="_gotcha" style="display:none">
-                
-                <button type="submit" class="submit-button">INVIA RICHIESTA</button>
-            </form>
+            <div id="form-message" style="display:none; text-align:center; margin-top:20px; padding:20px; background:#d4edda; color:#155724; border-radius:8px;">
+                ✓ Grazie! Il tuo messaggio è stato inviato con successo.
+            </div>
         </div>
-        
-        <!-- Messaggio di conferma (opzionale) -->
-        <div id="form-message" style="display:none; text-align:center; margin-top:20px; padding:20px; background:#d4edda; color:#155724; border-radius:8px;">
-            ✓ Grazie! Il tuo messaggio è stato inviato con successo.
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -239,89 +242,54 @@
         </div>
     </footer>
 
-    <script>// Smooth scrolling per i link di navigazione
-    
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    <script>
+        // Smooth scrolling per i link di navigazione
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Chiudi il menu mobile dopo il click
+                    document.getElementById('menu-toggle').checked = false;
+                }
             });
-        }
-    });
-});
-
-// Animazione al scroll per gli elementi
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Applica l'animazione alle card dei servizi
-document.querySelectorAll('.service-card, .equipment-item').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-});
-
-// Navbar shadow on scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    }
-});
-
-// Gestione form Formspree (opzionale - per mostrare messaggio senza lasciare la pagina)
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        // Rimuovi queste righe se vuoi il comportamento standard di Formspree
-        // (che reindirizza a una pagina di conferma)
-        
-        // Se vuoi restare sulla stessa pagina, usa questo codice AJAX:
-        /*
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const formAction = this.getAttribute('action');
-        
-        fetch(formAction, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                document.getElementById('form-message').style.display = 'block';
-                contactForm.reset();
-                setTimeout(() => {
-                    document.getElementById('form-message').style.display = 'none';
-                }, 5000);
-            } else {
-                alert('Si è verificato un errore. Riprova più tardi.');
-            }
-        }).catch(error => {
-            alert('Si è verificato un errore. Riprova più tardi.');
         });
-        */
-    });
-}</script>
+
+        // Animazione al scroll per gli elementi
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .equipment-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
