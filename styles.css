@@ -66,6 +66,7 @@ header {
     flex-direction: column;
     cursor: pointer;
     z-index: 1001;
+    gap: 0;
 }
 
 .hamburger span {
@@ -75,6 +76,7 @@ header {
     margin: 4px 0;
     transition: all 0.3s ease;
     border-radius: 3px;
+    display: block;
 }
 
 /* Animazione hamburger a X */
@@ -89,6 +91,7 @@ header {
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(8px, -8px);
 }
+
 
 /* Menu Desktop */
 .nav-menu {
@@ -678,6 +681,7 @@ footer {
     /* Navbar mobile */
     .navbar {
         padding: 15px 20px;
+        flex-wrap: nowrap;
     }
     
     .logo h1 {
@@ -688,12 +692,14 @@ footer {
         font-size: 9px;
     }
     
-    /* Mostra il menu hamburger SOLO su mobile */
+    /* MOSTRA il menu hamburger SOLO su mobile */
     .hamburger {
-        display: flex;
+        display: flex !important;
+        position: relative;
+        z-index: 1001;
     }
     
-    /* Nascondi il menu desktop e mostra solo quando attivo */
+    /* NASCONDI il menu desktop di default */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -707,11 +713,12 @@ footer {
         padding-top: 80px;
         gap: 0;
         z-index: 999;
+        overflow-y: auto;
     }
     
     /* Mostra il menu quando è attivo */
     .nav-menu.active {
-        left: 0;
+        left: 0 !important;
     }
     
     .nav-menu li {
@@ -789,6 +796,11 @@ footer {
 
 /* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
+    /* Su tablet nascondi l'hamburger */
+    .hamburger {
+        display: none;
+    }
+    
     .navbar {
         padding: 15px 30px;
     }
