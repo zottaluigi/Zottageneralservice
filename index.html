@@ -15,12 +15,6 @@
                 <p class="tagline">Movimento terra dal 2015</p>
             </div>
 
-            <div class="header-video">
-                <video autoplay muted loop playsinline>
-                <source src="video/header-video.mp4" type="siena.mp4">
-                Il tuo browser non supporta il tag video.
-                </video>
-            </div>
             <!-- Menu Hamburger -->
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -40,16 +34,22 @@
     </header>
 
     <!-- Hero Section con Video Background Simulato -->
-    <section id="home" class="hero">
-        <div class="video-background">
-            <div class="video-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h2 class="hero-title">Esperti in Movimentazione Terra</h2>
-            <p class="hero-subtitle">Scavi, Demolizioni e Trasporti dal 1975</p>
-            <a href="#contatti" class="cta-button">RICHIEDI PREVENTIVO</a>
-        </div>
-    </section>
+   <section id="home" class="hero">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="video/hero-video.mp4" type="video/mp4">
+      Il tuo browser non supporta il video.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <h2 class="hero-title">Esperti in Movimentazione Terra</h2>
+    <p class="hero-subtitle">Scavi, Demolizioni e Trasporti dal 1975</p>
+    <a href="#contatti" class="cta-button">RICHIEDI PREVENTIVO</a>
+  </div>
+</section>
+
 
     <!-- Sezione Servizi -->
     <section id="servizi" class="services">
