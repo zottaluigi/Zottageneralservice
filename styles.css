@@ -60,28 +60,37 @@ header {
     margin-top: -5px;
 }
 
-/* Menu hamburger */
-.menu-toggle {
-    display: none;
-}
-
+/* Menu Hamburger - Nascosto su desktop */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 10px;
     z-index: 1001;
 }
 
-.hamburger-line {
+.hamburger span {
     width: 30px;
     height: 3px;
     background-color: var(--white);
-    margin: 3px 0;
+    margin: 4px 0;
     transition: all 0.3s ease;
     border-radius: 3px;
 }
 
+/* Animazione hamburger a X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Menu Desktop */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -661,83 +670,85 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Responsive - MENU HAMBURGER */
+/* ============================================
+   RESPONSIVE - MENU HAMBURGER PER MOBILE
+   ============================================ */
+
 @media (max-width: 768px) {
+    /* Navbar mobile */
     .navbar {
         padding: 15px 20px;
     }
     
     .logo h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .tagline {
-        font-size: 10px;
+        font-size: 9px;
     }
     
-    /* Mostra il menu hamburger */
+    /* Mostra il menu hamburger SOLO su mobile */
     .hamburger {
         display: flex;
     }
     
-    /* Nascondi il menu di default */
+    /* Nascondi il menu desktop e mostra solo quando attivo */
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 0;
         flex-direction: column;
         background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
         width: 100%;
+        height: 100vh;
         text-align: center;
-        transition: left 0.3s ease;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.3);
-        padding: 20px 0;
+        transition: left 0.4s ease-in-out;
+        padding-top: 80px;
         gap: 0;
+        z-index: 999;
+    }
+    
+    /* Mostra il menu quando è attivo */
+    .nav-menu.active {
+        left: 0;
     }
     
     .nav-menu li {
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .nav-menu li:last-child {
-        border-bottom: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
     
     .nav-menu li a {
         display: block;
         width: 100%;
-        padding: 15px;
+        padding: 20px;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* Mostra il menu quando il checkbox è selezionato */
-    .menu-toggle:checked ~ .nav-menu {
-        left: 0;
+    .nav-menu li a::before {
+        display: none;
     }
     
-    /* Animazione hamburger a X */
-    .menu-toggle:checked ~ .hamburger .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
+    .nav-menu li a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: none;
     }
     
-    .menu-toggle:checked ~ .hamburger .hamburger-line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle:checked ~ .hamburger .hamburger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-    
+    /* Hero adjustments */
     .hero {
-        margin-top: 70px;
+        margin-top: 60px;
+        height: 80vh;
     }
     
     .hero-title {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .cta-button {
@@ -745,8 +756,13 @@ footer {
         font-size: 14px;
     }
     
+    /* Sections */
+    section {
+        padding: 50px 0;
+    }
+    
     .section-title {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     .services-grid,
