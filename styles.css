@@ -44,6 +44,7 @@ header {
     padding: 15px 40px;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo h1 {
@@ -57,6 +58,28 @@ header {
     color: var(--sky-blue);
     font-size: 12px;
     margin-top: -5px;
+}
+
+/* Menu hamburger */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
 }
 
 .nav-menu {
@@ -168,6 +191,7 @@ header {
     text-align: center;
     color: var(--white);
     animation: fadeInUp 1s ease;
+    padding: 0 20px;
 }
 
 @keyframes fadeInUp {
@@ -296,7 +320,7 @@ section {
 
 .transport {
     background: linear-gradient(135deg, var(--primary-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="15" y="45" width="70" height="15"/>ircle fill="%23fff" opacity="0"0.1" cx="30" cy="70" r="8"/>ircle fill="%23fff" opacity="0.1" cx="70" cycy="70" r="8"/></svg>');
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="15" y="45" width="70" height="15"/><circle fill="%23fff" opacity="0.1" cx="30" cy="70" r="8"/><circle fill="%23fff" opacity="0.1" cx="70" cy="70" r="8"/></svg>');
 }
 
 .earthmoving {
@@ -400,7 +424,7 @@ section {
 
 .truck {
     background: linear-gradient(135deg, var(--primary-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.2" x="20" y="40" width="60" height="20"/>ircle fill="%23fff" opacity="0.2" cx="35" cy="6565" r="7"/>ircle fill="%23fff" opacity="0.2" cx="65" cy="65" r r="7"/></svg>');
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.2" x="20" y="40" width="60" height="20"/><circle fill="%23fff" opacity="0.2" cx="35" cy="65" r="7"/><circle fill="%23fff" opacity="0.2" cx="65" cy="65" r="7"/></svg>');
     border-radius: 10px;
 }
 
@@ -637,20 +661,92 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Responsive */
+/* Responsive - MENU HAMBURGER */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 20px;
+        padding: 15px 20px;
     }
     
+    .logo h1 {
+        font-size: 20px;
+    }
+    
+    .tagline {
+        font-size: 10px;
+    }
+    
+    /* Mostra il menu hamburger */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Nascondi il menu di default */
     .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
         flex-direction: column;
-        gap: 10px;
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.3);
+        padding: 20px 0;
+        gap: 0;
+    }
+    
+    .nav-menu li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu li a {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+    
+    /* Mostra il menu quando il checkbox è selezionato */
+    .menu-toggle:checked ~ .nav-menu {
+        left: 0;
+    }
+    
+    /* Animazione hamburger a X */
+    .menu-toggle:checked ~ .hamburger .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+    
+    .menu-toggle:checked ~ .hamburger .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle:checked ~ .hamburger .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .hero {
+        margin-top: 70px;
     }
     
     .hero-title {
-        font-size: 36px;
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+    
+    .section-title {
+        font-size: 32px;
     }
     
     .services-grid,
@@ -658,12 +754,47 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .about-content,
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        height: 300px;
+    }
+    
     .contact-grid {
         grid-template-columns: 1fr;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-menu li a {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+    
+    .hero-title {
+        font-size: 42px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
