@@ -1,6 +1,5 @@
 # Zottageneralservice
-Sito per Zottageneralservice
-check-list
+CHECK-LIST
 
 1)Sistemare i footer 
 2)Creare pagina per privacy
