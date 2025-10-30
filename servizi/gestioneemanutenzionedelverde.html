@@ -33,44 +33,102 @@
         </nav>
     </header>
 
+<title>Galleria Foto Fullscreen</title>
+    <style>
+        .gallery { display: flex; flex-wrap: wrap; gap: 10px;}
+        .photo { width: 200px; height: 150px; cursor: pointer; }
+        .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px;}
+        #lightbox {
+            display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.92); justify-content: center; align-items: center;
+            flex-direction: column; z-index: 1000;
+        }
+        #lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 12px; }
+        .nav-btn { 
+            color: white; font-size: 2rem; background: rgba(0,0,0,0.3);
+            border: none; cursor: pointer; margin: 0 2rem; padding: 0.5rem 1.5rem;
+            border-radius: 50%; transition: background .2s;
+        }
+        .close-btn {
+            position: absolute; top: 2%; right: 3%; font-size: 3rem; background: none;
+            border: none; color: white; cursor: pointer;
+        }
+    </style>
 
+    
 <h1>Galleria Foto</h1>
     <div class="gallery">
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/1.jpg" alt="Descrizione foto 1">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/2.jpg" alt="Descrizione foto 2">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/3.jpg" alt="Descrizione foto 3">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/4.jpg" alt="Descrizione foto 3">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/5.jpg" alt="Descrizione foto 3">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/6.jpg" alt="Descrizione foto 3">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/7.jpg" alt="Descrizione foto 3">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/8.jpg" alt="Descrizione foto 3">
-        </div>
-        <div class="photo">
-            <img src="gestioneemanutenzionedelverde/9.jpg" alt="Descrizione foto 3">
-        </div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/1.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/2.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/3.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/4.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/5.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/6.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/7.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/8.jpg" alt="Foto 1"></div>
+        <div class="photo"><img src="gestioneemanutenzionedelverde/9.jpg" alt="Foto 1"></div>
         
-        <!-- Aggiungi altri <div class="photo"> se vuoi altre immagini -->
+        <!-- aggiungi altre immagini se vuoi -->
     </div>
+    <div id="lightbox">
+        <button class="close-btn" onclick="closeLightbox()">×</button>
+        <button class="nav-btn" onclick="prevImg()">◀</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="nav-btn" onclick="nextImg()">▶</button>
+    </div>
+    <script>
+        const images = Array.from(document.querySelectorAll('.photo img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        let currentImg = 0;
+
+        images.forEach((img, idx) => {
+            img.addEventListener('click', () => openLightbox(idx));
+        });
+
+        function openLightbox(idx) {
+            lightbox.style.display = 'flex';
+            showImg(idx);
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = "";
+        }
+
+        function showImg(idx) {
+            currentImg = idx;
+            lightboxImg.src = images[currentImg].src;
+        }
+
+        function prevImg() {
+            let newIdx = (currentImg - 1 + images.length) % images.length;
+            showImg(newIdx);
+        }
+        function nextImg() {
+            let newIdx = (currentImg + 1) % images.length;
+            showImg(newIdx);
+        }
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // aggiungi anche le frecce sinistra/destra da tastiera
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevImg();
+                if (e.key === 'ArrowRight') nextImg();
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+    </script>
 
 
 
 
-<!-- Css per foto -->
+<!-- Css per foto 
 <style>
         .gallery {
             display: flex;
@@ -90,7 +148,7 @@
             height: 100%;
             object-fit: cover;
         }
-    </style>
+    </style> -->
 
 
     
