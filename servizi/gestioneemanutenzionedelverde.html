@@ -44,11 +44,22 @@
             flex-direction: column; z-index: 1000;
         }
         #lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 12px; }
-        .nav-btn { 
-            color: white; font-size: 2rem; background: rgba(0,0,0,0.3);
-            border: none; cursor: pointer; margin: 0 2rem; padding: 0.5rem 1.5rem;
-            border-radius: 50%; transition: background .2s;
-        }
+        .nav-btn {
+    color: white;
+    background: linear-gradient(135deg, #2196f3 60%, #21cbf3 100%);
+    border: none;
+    cursor: pointer;
+    padding: 1rem 1.3rem;
+    border-radius: 50%;
+    transition: box-shadow .2s, transform .2s;
+    font-size: 2.3rem;
+    box-shadow: 0 0 15px 1px #08f4e4cc;
+    }
+        
+        .nav-btn:hover {
+    box-shadow: 0 0 22px 4px #21cbf3;
+    transform: scale(1.2);
+    }
         .close-btn {
             position: absolute; top: 2%; right: 3%; font-size: 3rem; background: none;
             border: none; color: white; cursor: pointer;
@@ -68,14 +79,21 @@
         <div class="photo"><img src="gestioneemanutenzionedelverde/8.jpg" alt="Foto 1"></div>
         <div class="photo"><img src="gestioneemanutenzionedelverde/9.jpg" alt="Foto 1"></div>
         
-        <!-- aggiungi altre immagini se vuoi -->
+       
     </div>
     <div id="lightbox">
-        <button class="close-btn" onclick="closeLightbox()">×</button>
-        <button class="nav-btn" onclick="prevImg()">◀</button>
-        <img id="lightbox-img" src="" alt="">
-        <button class="nav-btn" onclick="nextImg()">▶</button>
+       <button class="nav-btn left" onclick="prevImg()">
+    <svg width="32" height="32" viewBox="0 0 32 32">
+        <polyline points="20,8 12,16 20,24" fill="none" stroke="white" stroke-width="4"/>
+    </svg>
+</button>
+<button class="nav-btn right" onclick="nextImg()">
+    <svg width="32" height="32" viewBox="0 0 32 32">
+        <polyline points="12,8 20,16 12,24" fill="none" stroke="white" stroke-width="4"/>
+    </svg>
+</button>
     </div>
+    
     <script>
         const images = Array.from(document.querySelectorAll('.photo img'));
         const lightbox = document.getElementById('lightbox');
