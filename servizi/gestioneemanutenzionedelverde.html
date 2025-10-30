@@ -9,14 +9,15 @@
 
         body { margin: 0; background: #f5f5f5;}
         .spacer-header-gallery { height: 60px; }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 30px auto 0 auto;
-            justify-content: center;
-            max-width: 900px;
-        }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 60px auto 0 auto; /* <---- QUI! Spazio sopra di 60px tra menu e galleria */
+        justify-content: center;
+        max-width: 900px;
+            }
+
         .photo {
             width: 220px; height: 150px; cursor: pointer;
             border-radius: 10px; overflow: hidden;
