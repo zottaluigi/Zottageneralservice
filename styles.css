@@ -97,6 +97,13 @@ header {
     z-index: 1000;
 }
 
+/* Per movimento del titolo al passaggio del mouse per tornare alla home*/
+.logo a:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
