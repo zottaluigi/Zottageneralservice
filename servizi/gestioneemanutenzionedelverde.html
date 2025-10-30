@@ -175,6 +175,48 @@
             .footer-content { flex-direction: column; padding: 21px 9px 8px 9px;}
             .footer-section { margin-bottom: 10px;}
         }
+
+        
+        .titolo-servizio {
+    text-align: center;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #154184;
+    letter-spacing: .04em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.titolo-servizio .decor-left,
+.titolo-servizio .decor-right {
+    display: inline-block;
+    content: "";
+    height: 3px;
+    width: 50px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #67b26f 0%, #154184 100%);
+    opacity: 0.85;
+}
+.titolo-servizio .decor-right {
+    background: linear-gradient(270deg, #67b26f 0%, #154184 100%);
+}
+@media (max-width: 700px) {
+    .titolo-servizio {
+        font-size: 1.25rem;
+        margin-top: 24px;
+        margin-bottom: 17px;
+        gap: 10px;
+    }
+    .titolo-servizio .decor-left,
+    .titolo-servizio .decor-right {
+        width: 20px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -203,7 +245,11 @@
     </header>
 <h1 class="titolo-servizio"> . </h1>
     <main>
-        <h1 class="titolo-servizio">Gestione e manutenzione del verde</h1>
+        <h1 class="titolo-servizio">
+  <span class="decor-left"></span>
+  Gestione e manutenzione del verde
+  <span class="decor-right"></span>
+</h1>
         <div class="gallery">
             <div class="photo"><img src="gestioneemanutenzionedelverde/1.jpg" alt="Foto 1"></div>
             <div class="photo"><img src="gestioneemanutenzionedelverde/2.jpg" alt="Foto 2"></div>
