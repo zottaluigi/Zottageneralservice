@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zotta General Service - Impresa di Scavi e Movimentazione Terra</title>
+    <!-- Collegamento al CSS esterno presente nell'index principale -->
     <link rel="stylesheet" href="../styles.css">
     <style>
         html, body {
-            height: 100%;
+            min-height: 100%;
             margin: 0;
             padding: 0;
             background: #f5f5f5;
@@ -23,7 +24,6 @@
             flex-direction: column;
             align-items: center;
         }
-        /* Titolo servizio centrato */
         .titolo-servizio {
             text-align: center;
             margin-top: 38px;
@@ -40,7 +40,6 @@
                 margin-bottom: 13px;
             }
         }
-
         .gallery {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -51,7 +50,6 @@
         }
         .photo {
             width: 100%;
-            /* Aspect ratio: 3:2 per immagini più grandi */
             aspect-ratio: 3/2;
             cursor: pointer;
             border-radius: 10px;
@@ -83,70 +81,9 @@
             }
         }
 
-        #lightbox {
-            display: none; position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: #151b25;
-            justify-content: center; align-items: center;
-            z-index: 9000;
-        }
-        #lightbox-content {
-            position: relative; display: flex; align-items: center; justify-content: center;
-            width: 95vw; max-width: 900px; height: 85vh;
-        }
-        #lightbox-img {
-            max-width: 78vw; max-height: 78vh; border-radius: 18px;
-            background: #fff;
-            box-shadow: 0 0 30px 0px #1a2942cc;
-            transition: box-shadow 0.2s;
-            display: block;
-        }
-        /* FRECCE ESTERNE lightbox */
-        .ext-arrow {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 9100;
-            background: none;
-            border: none;
-            cursor: pointer;
-            opacity: 0.8;
-            padding: 16px 8px;
-            transition: opacity 0.18s, background 0.2s;
-            height: 56px;
-        }
-        .ext-arrow svg {
-            display: block;
-            width: 42px;
-            height: 42px;
-            stroke: #ffffff;
-            stroke-width: 2.6;
-            fill: none;
-        }
-        .ext-arrow.left { left: 22px; }
-        .ext-arrow.right { right: 22px; }
-        .ext-arrow:hover, .ext-arrow:focus { opacity: 1; background: rgba(70,90,120,.17);}
-        @media (max-width: 700px) {
-            #lightbox-content { width: 99vw; max-width: 99vw; height: 93vh;}
-            #lightbox-img { max-width: 97vw; max-height: 70vh;}
-            .ext-arrow { padding: 11px 3px; height: 38px;}
-            .ext-arrow svg { width: 28px; height: 28px;}
-            .ext-arrow.left { left: 2px; }
-            .ext-arrow.right { right: 2px; }
-        }
-        .close-btn {
-            position: absolute; top: 4%; right: 4%; font-size: 2.2rem; background: none;
-            border: none; color: white; cursor: pointer;
-            z-index: 9200; opacity: 0.7;
-            transition: opacity 0.12s;
-        }
-        .close-btn:hover { opacity: 1; }
-
-        /* FOOTEER SEMPRE IN BASSO */
+        /* Layout base footer, colori gestiti da CSS esterno */
         footer {
             flex-shrink: 0;
-            background: #154184;
-            color: #fff;
             width: 100%;
             margin-top: 48px;
         }
@@ -167,14 +104,13 @@
             text-align: center;
             font-size: 0.95em;
             padding: 14px;
-            background: #232d47;
         }
-        .footer-section h4 { font-weight: bold; }
-        .footer-section a { color: #e0eaff; text-decoration: underline;}
         @media (max-width: 900px) {
             .footer-content { flex-direction: column; padding: 21px 9px 8px 9px;}
             .footer-section { margin-bottom: 10px;}
         }
+        .footer-section h4 { font-weight: bold; }
+        .footer-section a { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -201,7 +137,7 @@
             </ul>
         </nav>
     </header>
-<h1 class="titolo-servizio"> . </h1>
+
     <main>
         <h1 class="titolo-servizio">Gestione e manutenzione del verde</h1>
         <div class="gallery">
@@ -228,7 +164,7 @@
             </button>
         </div>
     </main>
-    <!-- Footer sticky sempre in basso -->
+    <!-- Footer sticky sempre in basso (colori presi dal CSS esterno) -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -257,7 +193,6 @@
                 <p>&copy; 2025 Zotta General Service - Tutti i diritti riservati</p>
             </div>
         </div>
-        <link rel="stylesheet" href="../styles.css">
     </footer>
 
     <!-- JS Galleria Fullscreen + swipe mobile -->
@@ -321,7 +256,6 @@
             startX = null;
         });
     </script>
-    <!-- Hamburger e scroll nav -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
@@ -368,4 +302,5 @@
     </script>
 </body>
 </html>
+
 
