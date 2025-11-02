@@ -3,51 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <a href="styles.css"></a>
+  <link rel="stylesheet" href="styles.css">
   <title>Privacy Policy - Zotta General Service</title>
- <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+  <style>
+    /* Stili mantenuti come da versione precedente per impatto visivo moderno e leggibilità */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --primary-blue: #0066CC;
       --light-blue: #5DADE2;
-      --sky-blue: #85C1E9;
       --white: #FFFFFF;
       --light-gray: #F8F9FA;
       --dark-gray: #333333;
       --text-gray: #555555;
     }
-
     body {
-      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background: var(--light-gray);
       padding: 40px 20px;
     }
-
     .privacy-container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       background: var(--white);
       padding: 50px;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.09);
     }
-
     h1 {
-      font-size: 42px;
+      font-size: 44px;
       color: var(--primary-blue);
       margin-bottom: 30px;
       text-align: center;
       position: relative;
       padding-bottom: 20px;
     }
-
     h1::after {
       content: '';
       display: block;
@@ -57,37 +48,34 @@
       margin: 20px auto 0;
       border-radius: 2px;
     }
-
     h2 {
-      font-size: 24px;
+      font-size: 25px;
       color: var(--primary-blue);
-      margin-top: 40px;
+      margin-top: 38px;
       margin-bottom: 15px;
       padding-left: 15px;
       border-left: 4px solid var(--light-blue);
     }
-
     p {
       color: var(--text-gray);
       margin-bottom: 15px;
       line-height: 1.8;
     }
-
+    ul { margin-bottom: 15px; padding-left: 32px; color: var(--text-gray); }
+    li { margin-bottom: 7px; }
     a {
       color: var(--light-blue);
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
-
     a:hover {
       color: var(--primary-blue);
       text-decoration: underline;
     }
-
     .back-btn {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 38px;
       padding: 15px 35px;
       background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
       color: var(--white);
@@ -97,64 +85,109 @@
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,102,204,0.2);
+      box-shadow: 0 5px 15px rgba(0,102,204,0.18);
     }
-
     .back-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,102,204,0.3);
+      box-shadow: 0 8px 25px rgba(0,102,204,0.28);
     }
-
     @media (max-width: 768px) {
-      body {
-        padding: 20px 15px;
-      }
-
-      .privacy-container {
-        padding: 30px 20px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      .back-btn {
-        width: 100%;
-        text-align: center;
-      }
+      body { padding: 20px 15px; }
+      .privacy-container { padding: 30px 14px; }
+      h1 { font-size: 30px; }
+      h2 { font-size: 20px; }
+      .back-btn { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p>Questa Privacy Policy descrive come la nostra azienda raccoglie e utilizza i dati degli utenti che visitano il nostro sito web.</p>
-  
-  <h2>Tipologia di dati raccolti</h2>
-  <p>Il nostro sito è un sito vetrina e non richiede né raccoglie dati personali dagli utenti.</p>
-  <p>Utilizziamo cookie tecnici strettamente necessari per il corretto funzionamento del sito e per migliorare l’esperienza di navigazione.</p>
-  
-  <h2>Cookie</h2>
-  <p>I cookie tecnici ci permettono di mantenere attive alcune funzionalità essenziali. Non utilizziamo cookie di profilazione o di terze parti a fini pubblicitari.</p>
-  <p>Puoi gestire o bloccare i cookie direttamente dal tuo browser, ma potrebbe influenzare la fruibilità del sito.</p>
-  
-  <h2>Titolare del trattamento</h2>
-  <p>Il titolare del trattamento dei dati è Zotta General Service, con sede in C.da San Cataldo(PZ)</p>
-  <p>Per qualsiasi richiesta relativa alla privacy scrivere a: <a href="zottageneralservice@hotmail.com"> zottageneralservice@hotmail.com</a>.</p>
+  <div class="privacy-container">
+    <h1>Privacy Policy</h1>
+    <p>
+      La presente Privacy Policy è redatta ai sensi del Regolamento UE 679/2016 ("GDPR"). La policy riguarda il sito www.tuosito.github.io e tutte le pagine gestite da Zotta General Service.
+    </p>
+    
+    <h2>1. Titolare del trattamento</h2>
+    <p>
+      Zotta General Service<br>
+      Sede: C.da San Cataldo (PZ), Italia<br>
+      E-mail di contatto per privacy: 
+      <a href="mailto:zottageneralservice@hotmail.com">zottageneralservice@hotmail.com</a>
+    </p>
+    
+    <h2>2. Finalità e base giuridica del trattamento</h2>
+    <p>
+      Raccogliamo e trattiamo i dati personali degli utenti esclusivamente per:<br>
+    </p>
+    <ul>
+      <li>Rispondere a richieste di informazioni o assistenza inviate tramite il form di contatto.</li>
+      <li>Gestire la relazione precontrattuale e contrattuale.</li>
+      <li>Adempiere ad obblighi di legge.</li>
+    </ul>
+    <p>
+      La base giuridica del trattamento è l’esecuzione di misure contrattuali/precontrattuali (art. 6, par. 1, lett. b GDPR) e il consenso laddove richiesto.
+    </p>
+    
+    <h2>3. Tipologie di dati raccolti</h2>
+    <ul>
+      <li>Dati di navigazione anonimi, raccolti tramite cookie tecnici</li>
+      <li>Dati inseriti manualmente dall’utente nel form di contatto (nome, cognome, email, telefono e contenuto del messaggio)</li>
+      <li>Indirizzo IP utilizzato (per motivi di sicurezza e tutela)</li>
+    </ul>
+    <p>
+      I dati non vengono raccolti tramite profilazione o per finalità di marketing.
+    </p>
+    
+    <h2>4. Modalità di trattamento e conservazione</h2>
+    <p>
+      Il trattamento avviene con strumenti elettronici e manuali, nel rispetto delle misure di sicurezza previste dalla normativa. I dati raccolti tramite form sono trattati dal personale autorizzato e non sono diffusi. I dati sono conservati per il tempo strettamente necessario a gestire la richiesta e comunque non oltre 24 mesi dal ricevimento.
+    </p>
+    
+    <h2>5. Destinatari e trasferimento dati</h2>
+    <p>
+      I dati inseriti nel form contatto sono gestiti tramite Formspree, servizio che può archiviare i dati su server extra-UE (ad esempio USA). Zotta General Service si impegna affinché tali trasferimenti avvengano solo ove garantite idonee misure di protezione e sicurezza (standard contrattuali, richieste di adeguatezza, crittografia).
+    </p>
+    <p>
+      I dati non verranno ceduti o venduti a terzi. Potranno essere trasmessi solo a soggetti esterni (es. consulenti informatici o legali) nei limiti delle finalità.
+    </p>
 
-  <h2>Diritti dell'utente</h2>
-  <p>Gli utenti hanno il diritto di sapere quali dati vengono trattati, di richiederne la cancellazione o limitazione secondo la normativa vigente.</p>
-  
-  <h2>Aggiornamenti della policy</h2>
-  <p>Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento. Si consiglia di consultarla periodicamente.</p>
+    <h2>6. Cookie</h2>
+    <p>
+      Il sito utilizza esclusivamente cookie tecnici e funzionali, necessari per la navigazione e il corretto funzionamento delle pagine. Non vengono utilizzati cookie di profilazione. È possibile disabilitare i cookie tramite le impostazioni del browser; tuttavia, alcune funzionalità potrebbero non essere disponibili.
+    </p>
+    
+    <h2>7. Conferimento dei dati</h2>
+    <p>
+      Il conferimento dei dati tramite il modulo di contatto è facoltativo, ma necessario per ottenere risposte dalle nostre strutture. In assenza dei dati minimi (nome/email/messaggio) non sarà possibile gestire la risposta.
+    </p>
+    
+    <h2>8. Diritti degli interessati</h2>
+    <ul>
+      <li>Accesso ai dati personali;</li>
+      <li>Rettifica o cancellazione dei dati;</li>
+      <li>Limitazione od opposizione al trattamento;</li>
+      <li>Portabilità dei dati in formato strutturato;</li>
+      <li>Revoca del consenso ove prestato;</li>
+      <li>Proporre reclamo all’Autorità Garante per la protezione dei dati personali</li>
+    </ul>
+    <p>
+      Tali diritti possono essere esercitati scrivendo al Titolare del trattamento ai contatti sopra riportati. 
+    </p>
 
-<button class="back-btn" onclick="window.location.href='index.html'">
-  ← Torna alla Home
-</button>
-
-  
+    <h2>9. Sicurezza dei dati</h2>
+    <p>
+      Adottiamo misure tecniche e organizzative adeguate per garantire la sicurezza e la riservatezza dei dati personali, incluso backup periodico, autenticazione e crittografia dove consenta la piattaforma.
+    </p>
+    
+    <h2>10. Aggiornamenti della policy</h2>
+    <p>
+      La presente informativa è aggiornata al 02/11/2025. Eventuali aggiornamenti futuri saranno pubblicati su questa pagina. Si invita a consultarla periodicamente.
+    </p>
+    
+    <button class="back-btn" onclick="window.location.href='index.html'">
+      ← Torna alla Home
+    </button>
+  </div>
 </body>
 </html>
+
