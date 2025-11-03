@@ -77,6 +77,61 @@ body {
   
 
 
+/* per barra sponsor*/
+.partner-logos-bar {
+  background: #f3f7fa;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.logos-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.logo-arrow {
+  background: #fff;
+  border: 1px solid #3693c0;
+  color: #3693c0;
+  font-size: 2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(55,80,100,0.13);
+  transition: background 0.2s;
+}
+
+.logo-arrow:hover {
+  background: #3693c0;
+  color: #fff;
+}
+
+.logos-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 28px;
+  padding: 6px 0;
+  min-width: 0;
+}
+
+.partner-logo {
+  height: 58px;
+  width: auto;
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(40,80,120,0.07);
+  padding: 10px 18px;
+  margin-bottom: 6px;
+}
+
+
+
 
 
 
