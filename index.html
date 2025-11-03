@@ -128,6 +128,25 @@
         </div>
     </section>
 
+
+<!-- Fascia loghi partner -->
+<section class="partner-logos-bar">
+  <div class="logos-wrapper">
+    <button class="logo-arrow left" aria-label="Scorri a sinistra">&#8592;</button>
+    <div class="logos-scroll" id="logosScroll">
+      <!-- Sostituisci src e alt con i loghi delle aziende partner -->
+      <img src="partner1.png" alt="Partner 1" class="partner-logo">
+      <img src="partner2.png" alt="Partner 2" class="partner-logo">
+      <img src="partner3.png" alt="Partner 3" class="partner-logo">
+      <img src="partner4.png" alt="Partner 4" class="partner-logo">
+      <!-- aggiungi altri loghi secondo necessità -->
+    </div>
+    <button class="logo-arrow right" aria-label="Scorri a destra">&#8594;</button>
+  </div>
+</section>
+
+
+    
     <!-- Sezione Attrezzature -->
     <section id="attrezzature" class="equipment">
         <div class="container">
@@ -310,6 +329,16 @@
         }
     });
 });
+
+
+        // Logo bar scroll
+const logosScroll = document.getElementById('logosScroll');
+document.querySelector('.logo-arrow.left').onclick = function () {
+  logosScroll.scrollBy({ left: -150, behavior: 'smooth' });
+};
+document.querySelector('.logo-arrow.right').onclick = function () {
+  logosScroll.scrollBy({ left: 150, behavior: 'smooth' });
+};
 
 
         // Animazione al scroll per gli elementi
