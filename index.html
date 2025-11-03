@@ -130,18 +130,30 @@
 
 
 <!-- Fascia loghi partner -->
+<!-- Fascia loghi partner -->
 <section class="partner-logos-bar">
   <div class="logos-wrapper">
-    <button class="logo-arrow left" aria-label="Scorri a sinistra">&#8592;</button>
+    <button class="logo-arrow left" aria-label="Scorri a sinistra">
+      <!-- Freccia sinistra SVG -->
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:block;">
+        <circle cx="16" cy="16" r="16" fill="#eaf3fb"/>
+        <path d="M19 10L13 16L19 22" stroke="#3693c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
     <div class="logos-scroll" id="logosScroll">
-      <!-- Sostituisci src e alt con i loghi delle aziende partner -->
       <img src="partner1.png" alt="Partner 1" class="partner-logo">
       <img src="partner2.png" alt="Partner 2" class="partner-logo">
       <img src="partner3.png" alt="Partner 3" class="partner-logo">
       <img src="partner4.png" alt="Partner 4" class="partner-logo">
-      <!-- aggiungi altri loghi secondo necessità -->
+      <!-- aggiungi altri loghi -->
     </div>
-    <button class="logo-arrow right" aria-label="Scorri a destra">&#8594;</button>
+    <button class="logo-arrow right" aria-label="Scorri a destra">
+      <!-- Freccia destra SVG -->
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:block;">
+        <circle cx="16" cy="16" r="16" fill="#eaf3fb"/>
+        <path d="M13 10L19 16L13 22" stroke="#3693c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
   </div>
 </section>
 
@@ -334,10 +346,10 @@
         // Logo bar scroll
 const logosScroll = document.getElementById('logosScroll');
 document.querySelector('.logo-arrow.left').onclick = function () {
-  logosScroll.scrollBy({ left: -150, behavior: 'smooth' });
+  logosScroll.scrollBy({ left: -220, behavior: 'smooth' });
 };
 document.querySelector('.logo-arrow.right').onclick = function () {
-  logosScroll.scrollBy({ left: 150, behavior: 'smooth' });
+  logosScroll.scrollBy({ left: 220, behavior: 'smooth' });
 };
 
 
