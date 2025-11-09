@@ -64,5 +64,143 @@
         </div>
         <!-- Aggiungi altri mezzi qui seguendo lo stesso schema -->
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ZOTTA GENERAL SERVICE</h4>
+                    <p>Impresa di scavi, demolizioni e movimento terra dal 2015</p>
+                    <p class="footer-tagline">Semplicità, Cortesia, Disponibilità</p>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTATTI</h4>
+                    <p>📞 +39 388 923 3351</p>
+                    <p>📞 +39 348 875 0636</p>
+                    <p>📧 zottageneralservice@hotmail.com</p>
+                    <p>📍85023 Forenza (PZ)</p>
+                    <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/yzTwTmRRzf39bEBFA" target="_blank" rel="noopener noreferrer">Sede</a>  (PZ)</p>
+                    <p>📝 P.IVA: 01933620765</p>
+                </div>
+                <div class="footer-section">
+                    <h4>ORARI</h4>
+                    <p>Lunedì - Venerdì: 7:00 - 18:00</p>
+                    <p>Sabato: 7:00 - 18:00  (orario variabile)</p>
+                    <p>Domenica: Chiuso</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
+            </div>
+        </div>
+        <link rel="stylesheet" href="../styles.css">
+    </footer>
+
+    <!-- JS Galleria Fullscreen + swipe mobile -->
+    <script>
+        const images = Array.from(document.querySelectorAll('.photo img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        let currentImg = 0;
+
+        images.forEach((img, idx) => {
+            img.addEventListener('click', () => openLightbox(idx));
+        });
+
+        function openLightbox(idx) {
+            lightbox.style.display = 'flex';
+            showImg(idx);
+            document.body.style.overflow = "hidden";
+        }
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = "";
+        }
+        function showImg(idx) {
+            currentImg = idx;
+            lightboxImg.src = images[currentImg].src;
+            lightboxImg.alt = images[currentImg].alt;
+        }
+        function prevImg() {
+            let newIdx = (currentImg - 1 + images.length) % images.length;
+            showImg(newIdx);
+        }
+        function nextImg() {
+            let newIdx = (currentImg + 1) % images.length;
+            showImg(newIdx);
+        }
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevImg();
+                if (e.key === 'ArrowRight') nextImg();
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+        // Supporto swipe mobile
+        let startX = null;
+        lightboxImg.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) startX = e.touches[0].clientX;
+        });
+        lightboxImg.addEventListener('touchend', function(e) {
+            if (startX === null) return;
+            let endX = e.changedTouches[0].clientX;
+            let diff = endX - startX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) prevImg();
+                else nextImg();
+            }
+            startX = null;
+        });
+    </script>
+    <!-- Hamburger e scroll nav -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .equipment-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
