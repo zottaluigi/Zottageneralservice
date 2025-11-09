@@ -47,3 +47,35 @@ h1 {
 .mezzo-card ul li {
     margin-bottom: 6px;
 }
+
+/* Reset margini e padding per header e footer */
+header, footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header fisso in alto */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* esempio */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+/* Per non far coprire il titolo dall'header fisso: padding top */
+body {
+    padding-top: 60px; /* regola in base all'altezza dell'header */
+}
+
+/* Footer senza margini */
+footer {
+    width: 100%;
+    background-color: #fff; /* esempio */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
