@@ -1,0 +1,1 @@
+foto delle pale meccaniche
