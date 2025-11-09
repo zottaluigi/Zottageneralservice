@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mezzi Azienda</title>
+    <link rel="stylesheet" href="mezzi.css" />
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+    <!-- Header e Navigazione -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
+                <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
+                    ZOTTA
+                </span>
+                <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">
+                    GENERAL SERVICE
+                    <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
+                </span>
+                <p class="tagline">Movimento terra dal 2015</p>
+            </div>
+
+            <!-- Menu Hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Menu Desktop -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">HOME</a></li>
+                <li><a href="../index.html#servizi" class="nav-link">SERVIZI</a></li>
+                <li><a href="../index.html#attrezzature" class="nav-link">ATTREZZATURE</a></li>
+                <li><a href="../index.html#azienda" class="nav-link">AZIENDA</a></li>
+                <li><a href="../index.html#contatti" class="nav-link">CONTATTI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Escavatori Azienda</h1>
+        <div class="mezzi-container">
+            <div class="mezzo-card">
+                <img src="escavatori/cx130d.png" alt="CASE CX130D" />
+                <h2>CASE CX130D</h2>
+                <ul>
+                    <li>Descrizione punto 1</li>
+                    <li>Descrizione punto 2</li>
+                    <li>Descrizione punto 3</li>
+                </ul>
+            </div>
+            <div class="mezzo-card">
+                <img src="mezzo2.jpg" alt="Nome Mezzo 2" />
+                <h2>Nome Mezzo 2</h2>
+                <ul>
+                    <li>Descrizione punto 1</li>
+                    <li>Descrizione punto 2</li>
+                    <li>Descrizione punto 3</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ZOTTA GENERAL SERVICE</h4>
+                    <p>Impresa di scavi, demolizioni e movimento terra dal 2015</p>
+                    <p class="footer-tagline">Semplicità, Cortesia, Disponibilità</p>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTATTI</h4>
+                    <p>📞 +39 388 923 3351</p>
+                    <p>📞 +39 348 875 0636</p>
+                    <p>📧 zottageneralservice@hotmail.com</p>
+                    <p>📍85023 Forenza (PZ)</p>
+                    <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/yzTwTmRRzf39bEBFA" target="_blank" rel="noopener noreferrer">Sede</a>  (PZ)</p>
+                    <p>📝 P.IVA: 01933620765</p>
+                </div>
+                <div class="footer-section">
+                    <h4>ORARI</h4>
+                    <p>Lunedì - Venerdì: 7:00 - 18:00</p>
+                    <p>Sabato: 7:00 - 18:00  (orario variabile)</p>
+                    <p>Domenica: Chiuso</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Hamburger menu -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll effect for header shadow
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+
+</body>
+</html>
