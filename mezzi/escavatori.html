@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mezzi Azienda</title>
     <link rel="stylesheet" href="mezzi.css" />
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css" />
 </head>
+<body>
 
-     <!-- Header e Navigazione -->
+    <!-- Header e Navigazione -->
     <header>
         <nav class="navbar">
-            
-              <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
-                 <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
-              ZOTTA
-           </span>
-           <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">GENERAL SERVICE
-          <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
-          </span>
-             <p class="tagline">Movimento terra dal 2015</p
-           </div>     
+            <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
+                <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
+                    ZOTTA
+                </span>
+                <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">
+                    GENERAL SERVICE
+                    <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
+                </span>
+                <p class="tagline">Movimento terra dal 2015</p>
             </div>
 
             <!-- Menu Hamburger -->
@@ -29,7 +29,7 @@
                 <span></span>
                 <span></span>
             </div>
-            
+
             <!-- Menu Desktop -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="../index.html" class="nav-link">HOME</a></li>
@@ -40,30 +40,30 @@
             </ul>
         </nav>
     </header>
-    
-<body>
-    <h1>Mezzi Azienda</h1>
-    <div class="mezzi-container">
-        <div class="mezzo-card">
-            <img src="escavatori/cx130d.png" alt="Nome Mezzo 1" />
-            <h2> CASE CX130D</h2>
-            <ul>
-                <li>Descrizione punto 1</li>
-                <li>Descrizione punto 2</li>
-                <li>Descrizione punto 3</li>
-            </ul>
+
+    <main>
+        <h1>Mezzi Azienda</h1>
+        <div class="mezzi-container">
+            <div class="mezzo-card">
+                <img src="escavatori/cx130d.png" alt="CASE CX130D" />
+                <h2>CASE CX130D</h2>
+                <ul>
+                    <li>Descrizione punto 1</li>
+                    <li>Descrizione punto 2</li>
+                    <li>Descrizione punto 3</li>
+                </ul>
+            </div>
+            <div class="mezzo-card">
+                <img src="mezzo2.jpg" alt="Nome Mezzo 2" />
+                <h2>Nome Mezzo 2</h2>
+                <ul>
+                    <li>Descrizione punto 1</li>
+                    <li>Descrizione punto 2</li>
+                    <li>Descrizione punto 3</li>
+                </ul>
+            </div>
         </div>
-        <div class="mezzo-card">
-            <img src="mezzo2.jpg" alt="Nome Mezzo 2" />
-            <h2>Nome Mezzo 2</h2>
-            <ul>
-                <li>Descrizione punto 1</li>
-                <li>Descrizione punto 2</li>
-                <li>Descrizione punto 3</li>
-            </ul>
-        </div>
-        <!-- Aggiungi altri mezzi qui seguendo lo stesso schema -->
-    </div>
+    </main>
 
     <footer>
         <div class="container">
@@ -93,108 +93,27 @@
                 <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
             </div>
         </div>
-        <link rel="stylesheet" href="../styles.css">
     </footer>
 
-    <!-- JS Galleria Fullscreen + swipe mobile -->
-    <script>
-        const images = Array.from(document.querySelectorAll('.photo img'));
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        let currentImg = 0;
-
-        images.forEach((img, idx) => {
-            img.addEventListener('click', () => openLightbox(idx));
-        });
-
-        function openLightbox(idx) {
-            lightbox.style.display = 'flex';
-            showImg(idx);
-            document.body.style.overflow = "hidden";
-        }
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = "";
-        }
-        function showImg(idx) {
-            currentImg = idx;
-            lightboxImg.src = images[currentImg].src;
-            lightboxImg.alt = images[currentImg].alt;
-        }
-        function prevImg() {
-            let newIdx = (currentImg - 1 + images.length) % images.length;
-            showImg(newIdx);
-        }
-        function nextImg() {
-            let newIdx = (currentImg + 1) % images.length;
-            showImg(newIdx);
-        }
-
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'ArrowLeft') prevImg();
-                if (e.key === 'ArrowRight') nextImg();
-                if (e.key === 'Escape') closeLightbox();
-            }
-        });
-        // Supporto swipe mobile
-        let startX = null;
-        lightboxImg.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) startX = e.touches[0].clientX;
-        });
-        lightboxImg.addEventListener('touchend', function(e) {
-            if (startX === null) return;
-            let endX = e.changedTouches[0].clientX;
-            let diff = endX - startX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) prevImg();
-                else nextImg();
-            }
-            startX = null;
-        });
-    </script>
-    <!-- Hamburger e scroll nav -->
+    <!-- JS Hamburger menu -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         const navLinks = document.querySelectorAll('.nav-link');
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .equipment-item').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
+        // Scroll effect for header shadow
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
                 header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
             } else {
@@ -202,5 +121,6 @@
             }
         });
     </script>
+
 </body>
 </html>
