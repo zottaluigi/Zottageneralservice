@@ -1,0 +1,1 @@
+foto degli escavatori
