@@ -10,23 +10,49 @@
     padding: 20px;
     background: #f7f7f7;
   }
-  h2 {
-    margin-top: 40px;
+  h1 {
+    margin-bottom: 30px;
+  }
+  .gallery-box {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(100,100,100,0.12);
+    padding: 20px 18px 10px 18px;
+    margin-bottom: 32px;
+    max-width: 380px;
+    border: 1px solid #eee;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+  }
+  .gallery-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.16rem;
+    color: #375384;
+    text-align: left;
   }
   .gallery-preview {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
     cursor: pointer;
+    justify-content: flex-start;
+    margin-bottom: 10px;
   }
   .gallery-preview img {
-    width: calc(25% - 7.5px);
+    width: 55px;
+    height: 55px;
     object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+    border-radius: 7px;
+    border: 2px solid #dde3ed;
+    background: #fafbff;
+    transition: box-shadow 0.25s, border 0.25s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(80,80,80,0.10);
   }
   .gallery-preview img:hover {
-    transform: scale(1.05);
+    border: 2px solid #375384;
+    z-index: 1;
+    transform: scale(1.08);
   }
   /* Modal background */
   .modal {
@@ -34,7 +60,7 @@
     position: fixed;
     z-index: 1000;
     left: 0; top: 0; right: 0; bottom: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.84);
     overflow: hidden;
   }
   .modal.active {
@@ -42,16 +68,14 @@
     align-items: center;
     justify-content: center;
   }
-  /* Modal content wrapper */
   .modal-content {
     position: relative;
-    width: 90%;
+    width: 94vw;
     max-width: 600px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
   }
-  /* Scroll container */
   .scroll-container {
     display: flex;
     overflow-x: auto;
@@ -62,35 +86,38 @@
     height: 8px;
   }
   .scroll-container::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #b4b4b4;
     border-radius: 4px;
   }
   .scroll-container img {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 100%;
-    height: 400px;
+    max-width: 98vw;
+    height: 360px;
     object-fit: contain;
     user-select: none;
-    -webkit-user-drag: none;
+    margin-right: 2px;
+    background: #f6f6f6;
+    border-radius: 8px;
   }
   /* Navigation buttons */
   .nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(33,44,88,0.60);
     border: none;
     color: white;
-    font-size: 24px;
-    padding: 10px;
+    font-size: 28px;
+    padding: 10px 18px 11px 18px;
     cursor: pointer;
     border-radius: 50%;
     user-select: none;
+    z-index: 2;
+    transition: background 0.2s;
   }
-  .nav-button:focus {
-    outline: none;
-    box-shadow: 0 0 10px white;
+  .nav-button:hover {
+    background: #223376;
   }
   .nav-prev {
     left: 10px;
@@ -98,22 +125,32 @@
   .nav-next {
     right: 10px;
   }
-  /* Close button */
   .close-btn {
     position: absolute;
     top: 8px;
-    right: 12px;
-    font-size: 28px;
+    right: 14px;
+    font-size: 32px;
     font-weight: bold;
-    color: #333;
+    color: #185;
+    background: none;
+    border: none;
     cursor: pointer;
+    z-index: 3;
     user-select: none;
+    transition: color 0.2s;
   }
-  /* Responsive adjustments */
+  .close-btn:hover { color: #c00; }
   @media (max-width: 600px) {
+    .gallery-box { max-width: 97vw; }
     .scroll-container img {
-      height: 250px;
+      height: 180px;
+      max-width: 96vw;
     }
+    .nav-button {
+      font-size: 20px;
+      padding: 6px 13px 7px 13px;
+    }
+    .gallery-preview img { width: 44px; height: 44px; }
   }
 </style>
 </head>
@@ -122,37 +159,42 @@
 <h1>Gallerie Fotografiche</h1>
 
 <!-- Gallery 1 -->
-<h2>Galleria 1</h2>
-<div class="gallery-preview" data-gallery="gallery1">
-  <img src="https://picsum.photos/id/1011/200/150" alt="Foto 1" />
-  <img src="https://picsum.photos/id/1012/200/150" alt="Foto 2" />
-  <img src="https://picsum.photos/id/1013/200/150" alt="Foto 3" />
-  <img src="https://picsum.photos/id/1014/200/150" alt="Foto 4" />
+<div class="gallery-box">
+  <div class="gallery-title">Galleria 1</div>
+  <div class="gallery-preview" data-gallery="gallery1">
+    <img src="https://picsum.photos/id/1011/80/80" alt="Foto 1" />
+    <img src="https://picsum.photos/id/1012/80/80" alt="Foto 2" />
+    <img src="https://picsum.photos/id/1013/80/80" alt="Foto 3" />
+    <img src="https://picsum.photos/id/1014/80/80" alt="Foto 4" />
+  </div>
 </div>
 
 <!-- Gallery 2 -->
-<h2>Galleria 2</h2>
-<div class="gallery-preview" data-gallery="gallery2">
-  <img src="https://picsum.photos/id/1015/200/150" alt="Foto 1" />
-  <img src="https://picsum.photos/id/1016/200/150" alt="Foto 2" />
-  <img src="https://picsum.photos/id/1017/200/150" alt="Foto 3" />
-  <img src="https://picsum.photos/id/1018/200/150" alt="Foto 4" />
+<div class="gallery-box">
+  <div class="gallery-title">Galleria 2</div>
+  <div class="gallery-preview" data-gallery="gallery2">
+    <img src="https://picsum.photos/id/1015/80/80" alt="Foto 1" />
+    <img src="https://picsum.photos/id/1016/80/80" alt="Foto 2" />
+    <img src="https://picsum.photos/id/1017/80/80" alt="Foto 3" />
+    <img src="https://picsum.photos/id/1018/80/80" alt="Foto 4" />
+  </div>
 </div>
 
 <!-- Gallery 3 -->
-<h2>Galleria 3</h2>
-<div class="gallery-preview" data-gallery="gallery3">
-  <img src="https://picsum.photos/id/1019/200/150" alt="Foto 1" />
-  <img src="https://picsum.photos/id/1020/200/150" alt="Foto 2" />
-  <img src="https://picsum.photos/id/1021/200/150" alt="Foto 3" />
-  <img src="https://picsum.photos/id/1022/200/150" alt="Foto 4" />
+<div class="gallery-box">
+  <div class="gallery-title">Galleria 3</div>
+  <div class="gallery-preview" data-gallery="gallery3">
+    <img src="https://picsum.photos/id/1019/80/80" alt="Foto 1" />
+    <img src="https://picsum.photos/id/1020/80/80" alt="Foto 2" />
+    <img src="https://picsum.photos/id/1021/80/80" alt="Foto 3" />
+    <img src="https://picsum.photos/id/1022/80/80" alt="Foto 4" />
+  </div>
 </div>
 
-<!-- Modals for each gallery -->
-
+<!-- Modals (uguali a prima) -->
 <div id="modal-gallery1" class="modal">
   <div class="modal-content">
-    <span class="close-btn">&times;</span>
+    <button class="close-btn" title="Chiudi">&times;</button>
     <button class="nav-button nav-prev">&#10094;</button>
     <button class="nav-button nav-next">&#10095;</button>
     <div class="scroll-container">
@@ -168,7 +210,7 @@
 
 <div id="modal-gallery2" class="modal">
   <div class="modal-content">
-    <span class="close-btn">&times;</span>
+    <button class="close-btn" title="Chiudi">&times;</button>
     <button class="nav-button nav-prev">&#10094;</button>
     <button class="nav-button nav-next">&#10095;</button>
     <div class="scroll-container">
@@ -184,7 +226,7 @@
 
 <div id="modal-gallery3" class="modal">
   <div class="modal-content">
-    <span class="close-btn">&times;</span>
+    <button class="close-btn" title="Chiudi">&times;</button>
     <button class="nav-button nav-prev">&#10094;</button>
     <button class="nav-button nav-next">&#10095;</button>
     <div class="scroll-container">
@@ -239,3 +281,4 @@
 
 </body>
 </html>
+
