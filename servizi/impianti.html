@@ -11,15 +11,17 @@
   box-sizing: border-box;
 }
 
-.main-title{
+.main-title {
   font-size: 2.2rem;
   color: #2f3841;
   margin: 40px auto 38px auto;
   text-align: center;
-  font-family: 'Merriweather',Georgia,serif;
+  font-family: 'Merriweather', Georgia, serif;
   font-weight: 700;
   letter-spacing: -1.5px;
+  display: block;
 }
+
 
 .galleries-container {
   max-width: 1200px;
@@ -333,6 +335,18 @@
         }
       });
     });
+    // Hamburger menu per mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  }
+});
+
   </script>
 </body>
 </html>
