@@ -5,13 +5,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Gallerie Fotografiche Scorribili</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
     background: #f7f7f7;
   }
-  h1 {
-    margin-bottom: 30px;
+
+  body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* HEADER senza margini */
+  header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    border-bottom: 1px solid #e4e4e4;
+    box-shadow: 0 3px 10px rgba(44,80,120,0.07);
+    box-sizing: border-box;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    box-sizing: border-box;
+  }
+  .logo-text {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    margin: 0; 
+    padding: 0;
+  }
+  .logo-text > span {
+    margin: 0;
+    padding: 0;
+  }
+  .tagline {
+    font-size: 0.95rem;
+    color: #767676;
+    margin-top: 3px;
+    margin-bottom: 0;
+    padding-left: 2px;
+  }
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0; 
+    padding: 0;
+  }
+  .nav-link {
+    color: #234;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    transition: color 0.19s;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  .nav-link:hover {
+    background: #f3f6fc;
+    color: #0baaff;
+  }
+  .hamburger {
+    display: none;
+  }
+
+  @media (max-width: 750px) {
+    .navbar { flex-direction: column; padding: 10px 5vw;}
+    .nav-menu { flex-direction: column; width: 100%; align-items: flex-end;}
+    .hamburger { display: block; margin-right: 7px;}
+  }
+
+  /* TITOLO PAGINA BEN VISIBILE */
+  .main-title{
+    font-size: 2.2rem;
+    color: #2f3841;
+    margin: 40px auto 38px auto;
+    text-align: center;
+    font-family: 'Merriweather',Georgia,serif;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+  }
+
+  /* GALLERIE */
+  .galleries-container {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    padding: 0 10px;
+    text-align: center;
   }
   .gallery-box {
     background: #fff;
@@ -31,6 +123,7 @@
     font-size: 1.16rem;
     color: #375384;
     text-align: left;
+    white-space: nowrap;
   }
   .gallery-preview {
     display: flex;
@@ -54,7 +147,8 @@
     z-index: 1;
     transform: scale(1.08);
   }
-  /* Modal background */
+  
+  /* MODAL */
   .modal {
     display: none;
     position: fixed;
@@ -100,7 +194,6 @@
     background: #f6f6f6;
     border-radius: 8px;
   }
-  /* Navigation buttons */
   .nav-button {
     position: absolute;
     top: 50%;
@@ -152,197 +245,238 @@
     }
     .gallery-preview img { width: 44px; height: 44px; }
   }
+
+  /* FOOTER senza margini + full width */
+  footer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: #375384;
+    color: #fff;
+    border-top: 1px solid #2a355a;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 34px 12px 9px 12px;
+    box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .footer-section {
+    flex: 1 0 220px;
+    min-width: 215px;
+    max-width: 340px;
+    margin-bottom: 15px;
+  }
+  .footer-section h4 {
+    color: #aed9fc;
+    font-size: 1.19rem;
+    margin-bottom: 7px;
+    margin-top: 2px;
+  }
+  .footer-section a {
+    color: #dbefff;
+    text-decoration: underline;
+    transition: color 0.17s;
+  }
+  .footer-section a:hover { color: #a5e7ec; }
+  .footer-tagline { font-size: 1.04em; color: #e3f6fb;}
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.93em;
+    color: #ceeaf5;
+    padding: 8px 0 20px 0;
+    border-top: 1px solid #345174;
+    margin: 0 3vw;
+  }
+  @media (max-width: 850px) {
+    .footer-content { flex-direction: column; align-items: center; padding-left: 8px; padding-right: 8px;}
+    .footer-section { max-width: none; align-items: center;}
+  }
 </style>
 </head>
 <body>
   <!-- Header e Navigazione -->
-    <header>
-        <nav class="navbar">
-            
-              <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
-                 <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
-              ZOTTA
-           </span>
-           <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">GENERAL SERVICE
-          <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
-          </span>
-             <p class="tagline">Movimento terra dal 2015</p
-           </div>     
-            </div>
+  <header>
+    <nav class="navbar">
+      <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
+         <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
+          ZOTTA
+         </span>
+         <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">GENERAL SERVICE
+            <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
+         </span>
+         <p class="tagline">Movimento terra dal 2015</p>
+      </div>    
+      <!-- Menu Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Menu Desktop -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html" class="nav-link">HOME</a></li>
+        <li><a href="../index.html#servizi" class="nav-link">SERVIZI</a></li>
+        <li><a href="../index.html#attrezzature" class="nav-link">ATTREZZATURE</a></li>
+        <li><a href="../index.html#azienda" class="nav-link">AZIENDA</a></li>
+        <li><a href="../index.html#contatti" class="nav-link">CONTATTI</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <!-- Menu Hamburger -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <!-- Menu Desktop -->
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html" class="nav-link">HOME</a></li>
-                <li><a href="../index.html#servizi" class="nav-link">SERVIZI</a></li>
-                <li><a href="../index.html#attrezzature" class="nav-link">ATTREZZATURE</a></li>
-                <li><a href="../index.html#azienda" class="nav-link">AZIENDA</a></li>
-                <li><a href="../index.html#contatti" class="nav-link">CONTATTI</a></li>
-            </ul>
-        </nav>
-    </header>
-
-<h1>Gallerie Fotografiche</h1>
-
-<!-- Gallery 1 -->
-<div class="gallery-box">
-  <div class="gallery-title">Galleria 1</div>
-  <div class="gallery-preview" data-gallery="gallery1">
-    <img src="https://picsum.photos/id/1011/80/80" alt="Foto 1" />
-    <img src="https://picsum.photos/id/1012/80/80" alt="Foto 2" />
-    <img src="https://picsum.photos/id/1013/80/80" alt="Foto 3" />
-    <img src="https://picsum.photos/id/1014/80/80" alt="Foto 4" />
-  </div>
-</div>
-
-<!-- Gallery 2 -->
-<div class="gallery-box">
-  <div class="gallery-title">Galleria 2</div>
-  <div class="gallery-preview" data-gallery="gallery2">
-    <img src="https://picsum.photos/id/1015/80/80" alt="Foto 1" />
-    <img src="https://picsum.photos/id/1016/80/80" alt="Foto 2" />
-    <img src="https://picsum.photos/id/1017/80/80" alt="Foto 3" />
-    <img src="https://picsum.photos/id/1018/80/80" alt="Foto 4" />
-  </div>
-</div>
-
-<!-- Gallery 3 -->
-<div class="gallery-box">
-  <div class="gallery-title">Galleria 3</div>
-  <div class="gallery-preview" data-gallery="gallery3">
-    <img src="https://picsum.photos/id/1019/80/80" alt="Foto 1" />
-    <img src="https://picsum.photos/id/1020/80/80" alt="Foto 2" />
-    <img src="https://picsum.photos/id/1021/80/80" alt="Foto 3" />
-    <img src="https://picsum.photos/id/1022/80/80" alt="Foto 4" />
-  </div>
-</div>
-
-<!-- Modals (uguali a prima) -->
-<div id="modal-gallery1" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" title="Chiudi">&times;</button>
-    <button class="nav-button nav-prev">&#10094;</button>
-    <button class="nav-button nav-next">&#10095;</button>
-    <div class="scroll-container">
-      <img src="https://picsum.photos/id/1011/600/400" alt="Foto 1" />
-      <img src="https://picsum.photos/id/1012/600/400" alt="Foto 2" />
-      <img src="https://picsum.photos/id/1013/600/400" alt="Foto 3" />
-      <img src="https://picsum.photos/id/1014/600/400" alt="Foto 4" />
-      <img src="https://picsum.photos/id/1010/600/400" alt="Foto extra 5" />
-      <img src="https://picsum.photos/id/1009/600/400" alt="Foto extra 6" />
+  <div class="main-title">Gallerie Fotografiche Scorribili</div>
+  <div class="galleries-container">
+    <!-- Gallery 1 -->
+    <div class="gallery-box">
+      <div class="gallery-title">Galleria 1</div>
+      <div class="gallery-preview" data-gallery="gallery1">
+        <img src="https://picsum.photos/id/1011/80/80" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1012/80/80" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1013/80/80" alt="Foto 3" />
+        <img src="https://picsum.photos/id/1014/80/80" alt="Foto 4" />
+      </div>
+    </div>
+    <!-- Gallery 2 -->
+    <div class="gallery-box">
+      <div class="gallery-title">Galleria 2</div>
+      <div class="gallery-preview" data-gallery="gallery2">
+        <img src="https://picsum.photos/id/1015/80/80" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1016/80/80" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1017/80/80" alt="Foto 3" />
+        <img src="https://picsum.photos/id/1018/80/80" alt="Foto 4" />
+      </div>
+    </div>
+    <!-- Gallery 3 -->
+    <div class="gallery-box">
+      <div class="gallery-title">Galleria 3</div>
+      <div class="gallery-preview" data-gallery="gallery3">
+        <img src="https://picsum.photos/id/1019/80/80" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1020/80/80" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1021/80/80" alt="Foto 3" />
+        <img src="https://picsum.photos/id/1022/80/80" alt="Foto 4" />
+      </div>
     </div>
   </div>
-</div>
 
-<div id="modal-gallery2" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" title="Chiudi">&times;</button>
-    <button class="nav-button nav-prev">&#10094;</button>
-    <button class="nav-button nav-next">&#10095;</button>
-    <div class="scroll-container">
-      <img src="https://picsum.photos/id/1015/600/400" alt="Foto 1" />
-      <img src="https://picsum.photos/id/1016/600/400" alt="Foto 2" />
-      <img src="https://picsum.photos/id/1017/600/400" alt="Foto 3" />
-      <img src="https://picsum.photos/id/1018/600/400" alt="Foto 4" />
-      <img src="https://picsum.photos/id/1023/600/400" alt="Foto extra 5" />
-      <img src="https://picsum.photos/id/1024/600/400" alt="Foto extra 6" />
+  <!-- Modals -->
+  <div id="modal-gallery1" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" title="Chiudi">&times;</button>
+      <button class="nav-button nav-prev">❮</button>
+      <button class="nav-button nav-next">❯</button>
+      <div class="scroll-container">
+        <img src="https://picsum.photos/id/1011/600/400" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1012/600/400" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1013/600/400" alt="Foto 3" />
+        <img src="https://picsum.photos/id/1014/600/400" alt="Foto 4" />
+        <img src="https://picsum.photos/id/1010/600/400" alt="Foto extra 5" />
+        <img src="https://picsum.photos/id/1009/600/400" alt="Foto extra 6" />
+      </div>
     </div>
   </div>
-</div>
 
-<div id="modal-gallery3" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" title="Chiudi">&times;</button>
-    <button class="nav-button nav-prev">&#10094;</button>
-    <button class="nav-button nav-next">&#10095;</button>
-    <div class="scroll-container">
-      <img src="https://picsum.photos/id/1019/600/400" alt="Foto 1" />
-      <img src="https://picsum.photos/id/1020/600/400" alt="Foto 2" />
-      <img src="https://picsum.photos/id/1021/600/400" alt="Foto 3" />
-      <img src="https://picsum.photos/id/1022/600/400" alt="Foto 4" />
-      <img src="https://picsum.photos/id/1025/600/400" alt="Foto extra 5" />
-      <img src="https://picsum.photos/id/1026/600/400" alt="Foto extra 6" />
+  <div id="modal-gallery2" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" title="Chiudi">&times;</button>
+      <button class="nav-button nav-prev">❮</button>
+      <button class="nav-button nav-next">❯</button>
+      <div class="scroll-container">
+        <img src="https://picsum.photos/id/1015/600/400" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1016/600/400" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1017/600/400" alt="Foto 3" />
+        <img src="https://picsum.photos/id/1018/600/400" alt="Foto 4" />
+        <img src="https://picsum.photos/id/1023/600/400" alt="Foto extra 5" />
+        <img src="https://picsum.photos/id/1024/600/400" alt="Foto extra 6" />
+      </div>
     </div>
   </div>
-</div>
 
+  <div id="modal-gallery3" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" title="Chiudi">&times;</button>
+      <button class="nav-button nav-prev">❮</button>
+      <button class="nav-button nav-next">❯</button>
+      <div class="scroll-container">
+        <img src="https://picsum.photos/id/1019/600/400" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1020/600/400" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1021/600/400" alt="Foto 3" />
+        <img src="https://picsum.photos/id/1022/600/400" alt="Foto 4" />
+        <img src="https://picsum.photos/id/1025/600/400" alt="Foto extra 5" />
+        <img src="https://picsum.photos/id/1026/600/400" alt="Foto extra 6" />
+      </div>
+    </div>
+  </div>
 
-<footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>ZOTTA GENERAL SERVICE</h4>
-                    <p>Impresa di scavi, demolizioni e movimento terra dal 2015</p>
-                    <p class="footer-tagline">Semplicità, Cortesia, Disponibilità</p>
-                </div>
-                <div class="footer-section">
-                    <h4>CONTATTI</h4>
-                    <p>📞 +39 388 923 3351</p>
-                    <p>📞 +39 348 875 0636</p>
-                    <p>📧 zottageneralservice@hotmail.com</p>
-                    <p>📍85023 Forenza (PZ)</p>
-                    <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/yzTwTmRRzf39bEBFA" target="_blank" rel="noopener noreferrer">Sede</a>  (PZ)</p>
-                    <p>📝 P.IVA: 01933620765</p>
-                </div>
-                <div class="footer-section">
-                    <h4>ORARI</h4>
-                    <p>Lunedì - Venerdì: 7:00 - 18:00</p>
-                    <p>Sabato: 7:00 - 18:00  (orario variabile)</p>
-                    <p>Domenica: Chiuso</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
-            </div>
-        </div>
-        <link rel="stylesheet" href="../styles.css">
-    </footer>
-  
-<script>
-  // Apri il modal della galleria cliccata
-  document.querySelectorAll('.gallery-preview').forEach(preview => {
-    preview.addEventListener('click', () => {
-      const galleryId = preview.dataset.gallery;
-      const modal = document.getElementById('modal-' + galleryId);
-      modal.classList.add('active');
-    });
-  });
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>ZOTTA GENERAL SERVICE</h4>
+        <p>Impresa di scavi, demolizioni e movimento terra dal 2015</p>
+        <p class="footer-tagline">Semplicità, Cortesia, Disponibilità</p>
+      </div>
+      <div class="footer-section">
+        <h4>CONTATTI</h4>
+        <p>📞 +39 388 923 3351</p>
+        <p>📞 +39 348 875 0636</p>
+        <p>📧 zottageneralservice@hotmail.com</p>
+        <p>📍85023 Forenza (PZ)</p>
+        <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/yzTwTmRRzf39bEBFA" target="_blank" rel="noopener noreferrer">Sede</a> (PZ)</p>
+        <p>📝 P.IVA: 01933620765</p>
+      </div>
+      <div class="footer-section">
+        <h4>ORARI</h4>
+        <p>Lunedì - Venerdì: 7:00 - 18:00</p>
+        <p>Sabato: 7:00 - 18:00  (orario variabile)</p>
+        <p>Domenica: Chiuso</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
+    </div>
+  </footer>
 
-  // Chiudi il modal al click sulla X
-  document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.closest('.modal').classList.remove('active');
-    });
-  });
-
-  // Funzioni per scorrimento delle immagini nel modal
-  document.querySelectorAll('.modal').forEach(modal => {
-    const scrollContainer = modal.querySelector('.scroll-container');
-    const btnPrev = modal.querySelector('.nav-prev');
-    const btnNext = modal.querySelector('.nav-next');
-
-    btnPrev.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
-    });
-    btnNext.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
+  <script>
+    // Apri il modal della galleria cliccata
+    document.querySelectorAll('.gallery-preview').forEach(preview => {
+      preview.addEventListener('click', () => {
+        const galleryId = preview.dataset.gallery;
+        const modal = document.getElementById('modal-' + galleryId);
+        modal.classList.add('active');
+      });
     });
 
-    // Chiudi la galleria cliccando fuori dal contenuto
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
+    // Chiudi il modal al click sulla X
+    document.querySelectorAll('.close-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').classList.remove('active');
+      });
     });
-  });
-</script>
 
+    // Funzioni per scorrimento delle immagini nel modal
+    document.querySelectorAll('.modal').forEach(modal => {
+      const scrollContainer = modal.querySelector('.scroll-container');
+      const btnPrev = modal.querySelector('.nav-prev');
+      const btnNext = modal.querySelector('.nav-next');
+
+      btnPrev.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
+      });
+      btnNext.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
+      });
+
+      // Chiudi la galleria cliccando fuori dal contenuto
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
 
