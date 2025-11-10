@@ -9,24 +9,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100%;
     background: #f7f7f7;
+    width: 100vw;
+    overflow-x: hidden;
   }
-
   body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     padding: 0;
   }
-
-  /* HEADER senza margini */
-  header {
-    width: 100%;
-    padding: 0;
+  header, footer {
     margin: 0;
-    background: #fff;
+    padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  /* HEADER — stessi colori tuoi! */
+  header {
+    background: #fff; /* come nel tuo codice **/
     border-bottom: 1px solid #e4e4e4;
-    box-shadow: 0 3px 10px rgba(44,80,120,0.07);
     box-sizing: border-box;
   }
   .navbar {
@@ -80,14 +81,11 @@
   .hamburger {
     display: none;
   }
-
   @media (max-width: 750px) {
     .navbar { flex-direction: column; padding: 10px 5vw;}
     .nav-menu { flex-direction: column; width: 100%; align-items: flex-end;}
     .hamburger { display: block; margin-right: 7px;}
   }
-
-  /* TITOLO PAGINA BEN VISIBILE */
   .main-title{
     font-size: 2.2rem;
     color: #2f3841;
@@ -97,8 +95,6 @@
     font-weight: 700;
     letter-spacing: -1.5px;
   }
-
-  /* GALLERIE */
   .galleries-container {
     max-width: 1200px;
     margin: 0 auto 50px auto;
@@ -147,7 +143,6 @@
     z-index: 1;
     transform: scale(1.08);
   }
-  
   /* MODAL */
   .modal {
     display: none;
@@ -245,15 +240,15 @@
     }
     .gallery-preview img { width: 44px; height: 44px; }
   }
-
-  /* FOOTER senza margini + full width */
+/* FOOTER — stessi colori tuoi! */
   footer {
     width: 100vw;
     margin: 0;
     padding: 0;
-    background: #375384;
+    background: #375384; /* colore originale del tuo footer */
     color: #fff;
     border-top: 1px solid #2a355a;
+    box-sizing: border-box;
   }
   .footer-content {
     display: flex;
@@ -310,13 +305,11 @@
          </span>
          <p class="tagline">Movimento terra dal 2015</p>
       </div>    
-      <!-- Menu Hamburger -->
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <!-- Menu Desktop -->
       <ul class="nav-menu" id="navMenu">
         <li><a href="../index.html" class="nav-link">HOME</a></li>
         <li><a href="../index.html#servizi" class="nav-link">SERVIZI</a></li>
@@ -326,10 +319,8 @@
       </ul>
     </nav>
   </header>
-
   <div class="main-title">Gallerie Fotografiche Scorribili</div>
   <div class="galleries-container">
-    <!-- Gallery 1 -->
     <div class="gallery-box">
       <div class="gallery-title">Galleria 1</div>
       <div class="gallery-preview" data-gallery="gallery1">
@@ -339,7 +330,6 @@
         <img src="https://picsum.photos/id/1014/80/80" alt="Foto 4" />
       </div>
     </div>
-    <!-- Gallery 2 -->
     <div class="gallery-box">
       <div class="gallery-title">Galleria 2</div>
       <div class="gallery-preview" data-gallery="gallery2">
@@ -349,7 +339,6 @@
         <img src="https://picsum.photos/id/1018/80/80" alt="Foto 4" />
       </div>
     </div>
-    <!-- Gallery 3 -->
     <div class="gallery-box">
       <div class="gallery-title">Galleria 3</div>
       <div class="gallery-preview" data-gallery="gallery3">
@@ -360,7 +349,6 @@
       </div>
     </div>
   </div>
-
   <!-- Modals -->
   <div id="modal-gallery1" class="modal">
     <div class="modal-content">
@@ -377,7 +365,6 @@
       </div>
     </div>
   </div>
-
   <div id="modal-gallery2" class="modal">
     <div class="modal-content">
       <button class="close-btn" title="Chiudi">&times;</button>
@@ -393,7 +380,6 @@
       </div>
     </div>
   </div>
-
   <div id="modal-gallery3" class="modal">
     <div class="modal-content">
       <button class="close-btn" title="Chiudi">&times;</button>
@@ -409,7 +395,6 @@
       </div>
     </div>
   </div>
-
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -437,9 +422,7 @@
       <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
     </div>
   </footer>
-
   <script>
-    // Apri il modal della galleria cliccata
     document.querySelectorAll('.gallery-preview').forEach(preview => {
       preview.addEventListener('click', () => {
         const galleryId = preview.dataset.gallery;
@@ -447,28 +430,21 @@
         modal.classList.add('active');
       });
     });
-
-    // Chiudi il modal al click sulla X
     document.querySelectorAll('.close-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         btn.closest('.modal').classList.remove('active');
       });
     });
-
-    // Funzioni per scorrimento delle immagini nel modal
     document.querySelectorAll('.modal').forEach(modal => {
       const scrollContainer = modal.querySelector('.scroll-container');
       const btnPrev = modal.querySelector('.nav-prev');
       const btnNext = modal.querySelector('.nav-next');
-
       btnPrev.addEventListener('click', () => {
         scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
       });
       btnNext.addEventListener('click', () => {
         scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
       });
-
-      // Chiudi la galleria cliccando fuori dal contenuto
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           modal.classList.remove('active');
@@ -478,5 +454,6 @@
   </script>
 </body>
 </html>
+
 
 
