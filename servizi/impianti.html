@@ -1,153 +1,241 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zotta General Service - Impresa di Scavi e Movimentazione Terra</title>
-    <link rel="stylesheet" href="../styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gallerie Fotografiche Scorribili</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f7f7f7;
+  }
+  h2 {
+    margin-top: 40px;
+  }
+  .gallery-preview {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .gallery-preview img {
+    width: calc(25% - 7.5px);
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  .gallery-preview img:hover {
+    transform: scale(1.05);
+  }
+  /* Modal background */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    overflow: hidden;
+  }
+  .modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Modal content wrapper */
+  .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  /* Scroll container */
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  .scroll-container img {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  /* Navigation buttons */
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+  }
+  .nav-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px white;
+  }
+  .nav-prev {
+    left: 10px;
+  }
+  .nav-next {
+    right: 10px;
+  }
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .scroll-container img {
+      height: 250px;
+    }
+  }
+</style>
 </head>
 <body>
-    
-    <!-- Header e Navigazione -->
-    <header>
-        <nav class="navbar">
-            <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
-                <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
-                    ZOTTA
-                </span>
-                <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">
-                    GENERAL SERVICE
-                    <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
-                </span>
-                <p class="tagline">Movimento terra dal 2015</p>
-            </div>
 
-            <!-- Menu Hamburger -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<h1>Gallerie Fotografiche</h1>
 
-            <!-- Menu Desktop -->
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html" class="nav-link">HOME</a></li>
-                <li><a href="../index.html#servizi" class="nav-link">SERVIZI</a></li>
-                <li><a href="../index.html#attrezzature" class="nav-link">ATTREZZATURE</a></li>
-                <li><a href="../index.html#azienda" class="nav-link">AZIENDA</a></li>
-                <li><a href="../index.html#contatti" class="nav-link">CONTATTI</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Gallery 1 -->
+<h2>Galleria 1</h2>
+<div class="gallery-preview" data-gallery="gallery1">
+  <img src="https://picsum.photos/id/1011/200/150" alt="Foto 1" />
+  <img src="https://picsum.photos/id/1012/200/150" alt="Foto 2" />
+  <img src="https://picsum.photos/id/1013/200/150" alt="Foto 3" />
+  <img src="https://picsum.photos/id/1014/200/150" alt="Foto 4" />
+</div>
 
+<!-- Gallery 2 -->
+<h2>Galleria 2</h2>
+<div class="gallery-preview" data-gallery="gallery2">
+  <img src="https://picsum.photos/id/1015/200/150" alt="Foto 1" />
+  <img src="https://picsum.photos/id/1016/200/150" alt="Foto 2" />
+  <img src="https://picsum.photos/id/1017/200/150" alt="Foto 3" />
+  <img src="https://picsum.photos/id/1018/200/150" alt="Foto 4" />
+</div>
 
+<!-- Gallery 3 -->
+<h2>Galleria 3</h2>
+<div class="gallery-preview" data-gallery="gallery3">
+  <img src="https://picsum.photos/id/1019/200/150" alt="Foto 1" />
+  <img src="https://picsum.photos/id/1020/200/150" alt="Foto 2" />
+  <img src="https://picsum.photos/id/1021/200/150" alt="Foto 3" />
+  <img src="https://picsum.photos/id/1022/200/150" alt="Foto 4" />
+</div>
 
+<!-- Modals for each gallery -->
 
+<div id="modal-gallery1" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <button class="nav-button nav-prev">&#10094;</button>
+    <button class="nav-button nav-next">&#10095;</button>
+    <div class="scroll-container">
+      <img src="https://picsum.photos/id/1011/600/400" alt="Foto 1" />
+      <img src="https://picsum.photos/id/1012/600/400" alt="Foto 2" />
+      <img src="https://picsum.photos/id/1013/600/400" alt="Foto 3" />
+      <img src="https://picsum.photos/id/1014/600/400" alt="Foto 4" />
+      <img src="https://picsum.photos/id/1010/600/400" alt="Foto extra 5" />
+      <img src="https://picsum.photos/id/1009/600/400" alt="Foto extra 6" />
+    </div>
+  </div>
+</div>
 
+<div id="modal-gallery2" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <button class="nav-button nav-prev">&#10094;</button>
+    <button class="nav-button nav-next">&#10095;</button>
+    <div class="scroll-container">
+      <img src="https://picsum.photos/id/1015/600/400" alt="Foto 1" />
+      <img src="https://picsum.photos/id/1016/600/400" alt="Foto 2" />
+      <img src="https://picsum.photos/id/1017/600/400" alt="Foto 3" />
+      <img src="https://picsum.photos/id/1018/600/400" alt="Foto 4" />
+      <img src="https://picsum.photos/id/1023/600/400" alt="Foto extra 5" />
+      <img src="https://picsum.photos/id/1024/600/400" alt="Foto extra 6" />
+    </div>
+  </div>
+</div>
 
+<div id="modal-gallery3" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <button class="nav-button nav-prev">&#10094;</button>
+    <button class="nav-button nav-next">&#10095;</button>
+    <div class="scroll-container">
+      <img src="https://picsum.photos/id/1019/600/400" alt="Foto 1" />
+      <img src="https://picsum.photos/id/1020/600/400" alt="Foto 2" />
+      <img src="https://picsum.photos/id/1021/600/400" alt="Foto 3" />
+      <img src="https://picsum.photos/id/1022/600/400" alt="Foto 4" />
+      <img src="https://picsum.photos/id/1025/600/400" alt="Foto extra 5" />
+      <img src="https://picsum.photos/id/1026/600/400" alt="Foto extra 6" />
+    </div>
+  </div>
+</div>
 
+<script>
+  // Apri il modal della galleria cliccata
+  document.querySelectorAll('.gallery-preview').forEach(preview => {
+    preview.addEventListener('click', () => {
+      const galleryId = preview.dataset.gallery;
+      const modal = document.getElementById('modal-' + galleryId);
+      modal.classList.add('active');
+    });
+  });
 
+  // Chiudi il modal al click sulla X
+  document.querySelectorAll('.close-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.modal').classList.remove('active');
+    });
+  });
 
+  // Funzioni per scorrimento delle immagini nel modal
+  document.querySelectorAll('.modal').forEach(modal => {
+    const scrollContainer = modal.querySelector('.scroll-container');
+    const btnPrev = modal.querySelector('.nav-prev');
+    const btnNext = modal.querySelector('.nav-next');
 
+    btnPrev.addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
+    });
+    btnNext.addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
+    });
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>ZOTTA GENERAL SERVICE</h4>
-                    <p>Impresa di scavi, demolizioni e movimento terra dal 2015</p>
-                    <p class="footer-tagline">Semplicità, Cortesia, Disponibilità</p>
-                </div>
-                <div class="footer-section">
-                    <h4>CONTATTI</h4>
-                    <p>📞 +39 388 923 3351</p>
-                    <p>📞 +39 348 875 0636</p>
-                    <p>📧 zottageneralservice@hotmail.com</p>
-                    <p>📍85023 Forenza (PZ)</p>
-                    <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/yzTwTmRRzf39bEBFA" target="_blank" rel="noopener noreferrer">Sede</a>  (PZ)</p>
-                    <p>📝 P.IVA: 01933620765</p>
-                </div>
-                <div class="footer-section">
-                    <h4>ORARI</h4>
-                    <p>Lunedì - Venerdì: 7:00 - 18:00</p>
-                    <p>Sabato: 7:00 - 18:00  (orario variabile)</p>
-                    <p>Domenica: Chiuso</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Zotta General Service - <a href="../privacy.html">Tutti i diritti riservati</a></p>
-            </div>
-        </div>
-        <link rel="stylesheet" href="../styles.css">
-    </footer>
-    
-    
-    <script>
-        // Toggle menu hamburger
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-        const navLinks = document.querySelectorAll('.nav-link');
+    // Chiudi la galleria cliccando fuori dal contenuto
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  });
+</script>
 
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Chiudi il menu quando clicchi su un link
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling per i link di navigazione
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animazione al scroll per gli elementi
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .equipment-item').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Navbar shadow on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-    </script>
-
-    
 </body>
 </html>
