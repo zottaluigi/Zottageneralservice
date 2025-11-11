@@ -1,4 +1,10 @@
 # Zottageneralservice
+
+puoi scrivere i dettagli per favore cosi posso andare avanti il piu' possibile
+tipo le aziende piu grandi che collaborano perche so solo la erg poi magari scrivi come vorresti fare e cosa vorresti fare qua piu nel dettagli 
+tipo le suddivisioni e cose simili 
+
+
 CHECK-LIST
 
 -Inserire gli sponsor
