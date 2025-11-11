@@ -1,5 +1,6 @@
 # Zottageneralservice
 CHECK-LIST
+
 -Inserire gli sponsor
 -Foto dei mezzi
 -Foto di tutti i servizi
