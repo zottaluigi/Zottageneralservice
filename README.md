@@ -31,9 +31,13 @@ CHECK-LIST
 
 
 ELENCO MEZZI
+
 -3 camion 
+
 330-36
-man
+
+MAN TGA41.480
+
 camioncino
 
 
@@ -45,15 +49,25 @@ camioncino
 
 Fiat-hitachi EX215
 
-New holland E215
+New holland Kobelco E215
 
-215
+Case CX210E
 
-Case 130
+Case CX130D
 
-38
+Hitachi Zaxis 38U
+
 
 -1 greder
+
 -1 rullo
+
+Bomas
+
+
 -1 palacingolata
+
+
 -1 palagommata
+
+
