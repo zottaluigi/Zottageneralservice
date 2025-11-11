@@ -6,6 +6,7 @@ CHECK-LIST
 -Foto dei mezzi
 
 -Foto di tutti i servizi
+
 -Togliamo la parte "affidati a noi"? (Fatto commentato non l'ho eliminato in caso ci possa servire in futuro)
 
 -Capire la suddivisione delle immagini per i servizi
