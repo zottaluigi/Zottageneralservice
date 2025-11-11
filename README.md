@@ -4,7 +4,15 @@ puoi scrivere i dettagli per favore cosi posso andare avanti il piu' possibile
 tipo le aziende piu grandi che collaborano perche so solo la erg poi magari scrivi come vorresti fare e cosa vorresti fare qua piu nel dettagli 
 tipo le suddivisioni e cose simili 
 
+AZIENDE PER SPONSOR
 
+-ERG
+
+-IVPC
+
+-CAGGIANO "Il parco delle bontà"(mi pare si chiami così)
+
+-(LE ALTRE POI LE CHIEDO A ZIO)
 CHECK-LIST
 
 -Inserire gli sponsor
@@ -21,3 +29,31 @@ CHECK-LIST
 
 -aggiungere le immagini di copertina sui servizi e sui mezzi della pagina principale 
 
+
+ELENCO MEZZI
+-3 camion 
+330-36
+man
+camioncino
+
+
+
+-2 carrelloni 
+
+
+-5 escavatori
+
+Fiat-hitachi EX215
+
+New holland E215
+
+215
+
+Case 130
+
+38
+
+-1 greder
+-1 rullo
+-1 palacingolata
+-1 palagommata
