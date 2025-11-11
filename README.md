@@ -1,9 +1,9 @@
 # Zottageneralservice
 CHECK-LIST
-
-1)Sistemare i footer (fatto)
-2)Creare pagina per privacy (Fatto)
-3)Link di tutte le pagine
-4)informarsi per sponsor
-5)Foto dei mezzi
-6)Foto di tutti i servizi
+-Inserire gli sponsor
+-Foto dei mezzi
+-Foto di tutti i servizi
+-Togliamo la parte "affidati a noi"?
+-Capire la suddivisione delle immagini per i servizi
+-capire come organizzare le cartelle per la suddivisione dentro i servizi
+-aggiungere le immagini di copertina sui servizi e sui mezzi della pagina principale 
