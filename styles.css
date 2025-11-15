@@ -1,4 +1,4 @@
-/* RESET e VARIABILI colore */
+/* Reset e variabili colore */
 * {
     margin: 0;
     padding: 0;
@@ -37,8 +37,6 @@ header {
     margin: 0 auto;
     position: relative;
 }
-
-/* Logo e Slogan */
 .logo-text {
     display: flex;
     flex-direction: column;
@@ -324,7 +322,7 @@ section {
     color: var(--text-gray);
 }
 
-/* PARTNER/BARRA LOGHI */
+/* PARTNER/LOGHI */
 .partner-logos-bar {
     background: #f3f7fa;
     padding: 32px 0 36px 0;
@@ -373,7 +371,90 @@ section {
     margin: 0 0 22px 0;
 }
 
-/* RESPONSIVE menu hamburger/mobile */
+/* CONTATTI + FORM */
+.contact {
+    background: var(--light-gray);
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.contact-info h3 {
+    font-size: 28px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+.contact-details {
+    margin-top: 30px;
+}
+.contact-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: var(--white);
+    border-radius: 10px;
+    border-left: 4px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+.contact-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,102,204,0.2);
+}
+.contact-item strong {
+    color: var(--primary-blue);
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    resize: vertical;
+    background: var(--white);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--light-blue);
+    box-shadow: 0 0 10px rgba(93,173,226,0.25);
+}
+.submit-button {
+    padding: 18px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,102,204,0.35);
+}
+
+/* MESSAGGIO SUCCESSO FORM */
+#form-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* RESPONSIVE hamburger/mobile */
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 20px;
