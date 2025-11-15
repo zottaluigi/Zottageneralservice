@@ -1,28 +1,65 @@
 /*CSS PER IMMAGINI DI COPERTINA*/
+/* IMMAGINE DI COPERTINA MODERNA E DINAMICA */
 .service-image, .equipment-image {
-    width: 140px;           /* aumenta la larghezza */
-    height: 78px;           /* diminuisci l'altezza */
+    width: 160px;
+    height: 90px;
     margin: 0 auto 18px auto;
     background-color: #217da3;
-    border-radius: 14px;
+    border-radius: 18px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,102,204,0.11), 0 1px 2px rgba(0,0,0,0.12);
+    transition: box-shadow 0.3s, transform 0.22s;
+    position: relative;
 }
 .service-image img, .equipment-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 18px;
     display: block;
+    filter: brightness(0.94) saturate(1.13);
+    transition: filter 0.25s, transform 0.23s;
+}
+.service-image:hover, .equipment-image:hover {
+    box-shadow: 0 15px 40px rgba(0,102,204,0.22), 0 2px 8px rgba(0,0,0,0.16);
+    transform: scale(1.045) rotate(-0.7deg);
+}
+
+.service-image:hover img, .equipment-image:hover img {
+    filter: brightness(1.12) saturate(1.25) contrast(1.06);
+    transform: scale(1.046) rotate(0.1deg);
+}
+.service-image::after, .equipment-image::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    border-radius: 18px;
+    background: linear-gradient(90deg,rgba(0,0,0,0.07) 0%,rgba(93,173,226,0.13) 100%);
+    opacity: 0;
+    transition: opacity 0.22s;
+}
+.service-image:hover::after, .equipment-image:hover::after {
+    opacity: 1;
 }
 @media (max-width: 600px) {
     .service-image, .equipment-image {
-        width: 100px;
-        height: 56px;
+        width: 105px;
+        height: 60px;
+        border-radius: 13px;
+    }
+    .service-image img, .equipment-image img {
+        border-radius: 13px;
+    }
+    .service-image::after, .equipment-image::after {
+        border-radius: 13px;
     }
 }
+
 
 
 
