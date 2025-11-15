@@ -1,28 +1,28 @@
 .service-image, .equipment-image {
-    width: 88px;
-    height: 88px;
+    width: 140px;           /* aumenta la larghezza */
+    height: 78px;           /* diminuisci l'altezza */
     margin: 0 auto 18px auto;
     background-color: #217da3;
-    border-radius: 9px;
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .service-image img, .equipment-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 9px;
+    border-radius: 14px;
     display: block;
 }
 @media (max-width: 600px) {
     .service-image, .equipment-image {
-        width: 68px;
-        height: 68px;
+        width: 100px;
+        height: 56px;
     }
 }
+
 
 
 
