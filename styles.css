@@ -1,20 +1,27 @@
-.service-image img {
+.service-image, .equipment-image {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 18px auto;
+    background-color: #217da3;
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-image img, .equipment-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 9px;
     display: block;
 }
-.service-image {
-    width: 88px;     /* stessa dimensione per tutti */
-    height: 88px;
-    margin: 0 auto 18px auto;
-    background-color: #217da3;  /* sfondo blu se l'immagine non si carica */
-    border-radius: 9px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 600px) {
+    .service-image, .equipment-image {
+        width: 68px;
+        height: 68px;
+    }
 }
 
 
@@ -478,35 +485,7 @@ section {
     left: 100%;
 }
 
-.excavator {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="10" y="40" width="30" height="20"/><rect fill="%23fff" opacity="0.1" x="50" y="30" width="40" height="30"/></svg>');
-}
 
-.demolition {
-    background: linear-gradient(135deg, var(--light-blue), var(--sky-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="20" y="20" width="25" height="40"/><rect fill="%23fff" opacity="0.1" x="55" y="35" width="20" height="25"/></svg>');
-}
-
-.transport {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="15" y="45" width="70" height="15"/><circle fill="%23fff" opacity="0.1" cx="30" cy="70" r="8"/><circle fill="%23fff" opacity="0.1" cx="70" cy="70" r="8"/></svg>');
-}
-
-.earthmoving {
-    background: linear-gradient(135deg, var(--light-blue), var(--primary-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon fill="%23fff" opacity="0.1" points="10,70 50,40 90,70"/></svg>');
-}
-
-.roads {
-    background: linear-gradient(135deg, var(--sky-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="30" y="20" width="40" height="60"/></svg>');
-}
-
-.waste {
-    background: linear-gradient(135deg, var(--primary-blue), var(--sky-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.1" x="25" y="30" width="50" height="45"/></svg>');
-}
 
 .service-card h3 {
     padding: 20px;
@@ -580,29 +559,6 @@ section {
     50% { transform: translateY(-10px); }
 }
 
-.excavator-large {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.2" x="20" y="50" width="25" height="15"/><rect fill="%23fff" opacity="0.2" x="55" y="40" width="30" height="25"/></svg>');
-    border-radius: 10px;
-}
-
-.bulldozer {
-    background: linear-gradient(135deg, var(--light-blue), var(--sky-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.2" x="25" y="45" width="50" height="20"/></svg>');
-    border-radius: 10px;
-}
-
-.truck {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.2" x="20" y="40" width="60" height="20"/><circle fill="%23fff" opacity="0.2" cx="35" cy="65" r="7"/><circle fill="%23fff" opacity="0.2" cx="65" cy="65" r="7"/></svg>');
-    border-radius: 10px;
-}
-
-.compactor {
-    background: linear-gradient(135deg, var(--sky-blue), var(--light-blue)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" opacity="0.2" x="30" y="45" width="40" height="20"/></svg>');
-    border-radius: 10px;
-}
 
 .equipment-item h4 {
     font-size: 22px;
