@@ -463,13 +463,6 @@ section {
     box-shadow: 0 15px 40px rgba(0,102,204,0.3);
 }
 
-.service-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
 
 .service-image::before {
     content: '';
@@ -546,14 +539,6 @@ section {
     transform: scale(1.05);
 }
 
-.equipment-image {
-    height: 150px;
-    margin-bottom: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    animation: float 3s ease-in-out infinite;
-}
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
