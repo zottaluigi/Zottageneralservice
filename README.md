@@ -6,11 +6,11 @@ tipo le suddivisioni e cose simili
 
 AZIENDE PER SPONSOR
 
--ERG
+-ERG (messo)
 
--IVPC
+-IVPC (messo)
 
--CAGGIANO "Il parco delle bontà"(mi pare si chiami così)
+-CAGGIANO "Il parco delle bontà"(mi pare si chiami così) (messo)
 
 -(LE ALTRE POI LE CHIEDO A ZIO)
 CHECK-LIST
