@@ -1,1 +1,1 @@
-Foto per le copertina
+FOTO PER COPERTINA
