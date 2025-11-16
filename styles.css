@@ -1,36 +1,49 @@
 /*CSS PER IMMAGINI DI COPERTINA*/
 /* IMMAGINE DI COPERTINA MODERNA E DINAMICA */
-.service-image, .equipment-image {
-    width: 160px;
-    height: 90px;
-    margin: 0 auto 18px auto;
-    background-color: #217da3;
-    border-radius: 18px;
+.service-card {
+    background: var(--white);
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 24px rgba(0,102,204,0.11), 0 1px 2px rgba(0,0,0,0.12);
-    transition: box-shadow 0.3s, transform 0.22s;
+    padding: 0 0 15px 0;
+}
+
+.service-image, .equipment-image {
+    width: 95%;
+    max-width: 350px;
+    aspect-ratio: 16/9;
+    background-color: #217da3;
+    border-radius: 16px 16px 8px 8px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 24px rgba(0,102,204,0.11), 0 1px 2px rgba(0,0,0,0.10);
+    transition: box-shadow 0.28s, transform 0.22s;
     position: relative;
 }
+
 .service-image img, .equipment-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 16px 16px 8px 8px;
     display: block;
-    filter: brightness(0.94) saturate(1.13);
+    filter: brightness(0.98) saturate(1.12);
     transition: filter 0.25s, transform 0.23s;
 }
-.service-image:hover, .equipment-image:hover {
-    box-shadow: 0 15px 40px rgba(0,102,204,0.22), 0 2px 8px rgba(0,0,0,0.16);
-    transform: scale(1.045) rotate(-0.7deg);
-}
 
+.service-image:hover, .equipment-image:hover {
+    box-shadow: 0 15px 32px rgba(0,102,204,0.26), 0 2px 8px rgba(0,0,0,0.14);
+    transform: scale(1.045) rotate(-0.5deg);
+}
 .service-image:hover img, .equipment-image:hover img {
-    filter: brightness(1.12) saturate(1.25) contrast(1.06);
-    transform: scale(1.046) rotate(0.1deg);
+    filter: brightness(1.12) saturate(1.22);
+    transform: scale(1.04) rotate(0.2deg);
 }
 .service-image::after, .equipment-image::after {
     content: "";
@@ -38,27 +51,32 @@
     left: 0; top: 0;
     width: 100%; height: 100%;
     pointer-events: none;
-    border-radius: 18px;
-    background: linear-gradient(90deg,rgba(0,0,0,0.07) 0%,rgba(93,173,226,0.13) 100%);
+    border-radius: 16px 16px 8px 8px;
+    background: linear-gradient(90deg,rgba(0,0,0,0.05) 0%,rgba(93,173,226,0.09) 100%);
     opacity: 0;
-    transition: opacity 0.22s;
+    transition: opacity 0.23s;
 }
 .service-image:hover::after, .equipment-image:hover::after {
     opacity: 1;
 }
 @media (max-width: 600px) {
     .service-image, .equipment-image {
-        width: 105px;
-        height: 60px;
-        border-radius: 13px;
+        max-width: 98vw;
+        border-radius: 11px 11px 6px 6px;
     }
     .service-image img, .equipment-image img {
-        border-radius: 13px;
+        border-radius: 11px 11px 6px 6px;
     }
     .service-image::after, .equipment-image::after {
-        border-radius: 13px;
+        border-radius: 11px 11px 6px 6px;
     }
 }
+.service-card h3 {
+    margin-top: 14px;
+    font-size: 25px;
+    color: var(--primary-blue);
+}
+
 
 
 
@@ -487,18 +505,8 @@ section {
     gap: 30px;
 }
 
-.service-card {
-    background: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,102,204,0.3);
-}
+
 
 
 .service-image::before {
@@ -512,22 +520,13 @@ section {
     transition: left 0.5s ease;
 }
 
-.service-card:hover .service-image::before {
-    left: 100%;
-}
 
 
 
-.service-card h3 {
-    padding: 20px;
-    font-size: 24px;
-    color: var(--primary-blue);
-}
 
-.service-card p {
-    padding: 0 20px 20px;
-    color: var(--text-gray);
-}
+
+
+
 
 .learn-more {
     display: inline-block;
