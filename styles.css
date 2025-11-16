@@ -22,7 +22,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 /* ========= HEADER & NAV ========= */
 header {
@@ -519,32 +519,35 @@ footer {
 
 
 section {
-    padding: 100px 0 85px 0; /* spazio sopra/dopo categorie */
+    padding: 90px 0 80px 0;
 }
 
 .section-title, .partner-bar-title {
-    font-size: 42px;
-    text-align: center;
-    color: var(--primary-blue); /* blu principale */
+    font-size: 2.6rem;
+    text-align: center !important;
+    color: var(--primary-blue) !important;
     font-family: 'Merriweather', Georgia, serif;
     font-weight: 700;
-    margin-bottom: 65px;
+    margin-bottom: 56px;
     letter-spacing: 1px;
+    margin-top: 0;
+    line-height: normal;
+    /* Per evitare override di altri css */
 }
 
 .section-title::after, .partner-bar-title::after {
     content: '';
     display: block;
-    width: 90px;
+    width: 68px;
     height: 4px;
-    background: var(--sky-blue); /* blu chiaro */
-    margin: 20px auto 0 auto;
+    background: var(--sky-blue);
+    margin: 22px auto 0 auto;
     border-radius: 3px;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
-.services, .equipment, .contact, .about, .partner-logos-bar {
-    margin-bottom: 60px; /* spazio extra tra le sezioni */
+.services, .equipment, .contact, .partner-logos-bar, .about {
+    margin-bottom: 55px;
 }
 
 .services-grid, .equipment-grid, .contact-grid {
@@ -558,11 +561,10 @@ section {
 
 /* Spaziatura tra le cards delle attrezzature e servizi anche su mobile */
 @media (max-width: 600px) {
-    .service-card, .equipment-item {
-        margin-bottom: 18px;
-        margin-top: 10px;
+    .section-title, .partner-bar-title {
+        font-size: 1.7rem;
+        margin-bottom: 40px;
     }
-}
 
 /* Footer rivisto per più spazio */
 footer {
