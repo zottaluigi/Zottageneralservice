@@ -6,23 +6,32 @@
     <title>Zotta General Service - Impresa di Scavi e Movimentazione Terra</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <!-- HEADER E NAVBAR -->
+    <!-- Header e Navigazione -->
     <header>
         <nav class="navbar">
-            <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
-                <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">ZOTTA</span>
-                <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">GENERAL SERVICE
-                    <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
-                </span>
-                <p class="tagline">Movimento terra dal 2015</p>
+            
+              <div class="logo-text" style="display:flex; flex-direction:column; align-items:flex-start;">
+                 <span style="font-family:'Merriweather',Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-2px;color:#444;line-height:1;">
+              ZOTTA
+           </span>
+           <span style="font-size:1.1rem; font-family:'Merriweather',Georgia,serif;font-weight:400; color:#3693c0; letter-spacing:1.5px; display:block;">GENERAL SERVICE
+          <span style="font-size:0.9rem; color:#444; margin-left:6px; letter-spacing:1px;">S.R.L.</span>
+          </span>
+             <p class="tagline">Movimento terra dal 2015</p
+           </div>     
             </div>
+
+            <!-- Menu Hamburger -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            
+            <!-- Menu Desktop -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">HOME</a></li>
                 <li><a href="#servizi" class="nav-link">SERVIZI</a></li>
@@ -33,141 +42,178 @@
         </nav>
     </header>
 
-    <!-- HERO VIDEO -->
-    <section id="home" class="hero">
-        <div class="video-background">
-            <video autoplay muted loop playsinline id="heroVideo">
-                <source src="video.mp4" type="video/mp4">
-                Il tuo browser non supporta il video.
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h2 class="hero-title">Esperti in Movimentazione Terra</h2>
-            <p class="hero-subtitle">Scavi, Demolizioni e Trasporti dal 2015</p>
-            <a href="#contatti" class="cta-button">RICHIEDI PREVENTIVO</a>
-        </div>
-    </section>
+    <!-- Hero Section con Video Background Simulato -->
+   <section id="home" class="hero">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="video.mp4" type="video/mp4">
+      Il tuo browser non supporta il video.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
 
-    <!-- SERVIZI -->
+  <div class="hero-content">
+    <h2 class="hero-title">Esperti in Movimentazione Terra</h2>
+    <p class="hero-subtitle">Scavi, Demolizioni e Trasporti dal 2015</p>
+    <a href="#contatti" class="cta-button">RICHIEDI PREVENTIVO</a>
+  </div>
+</section>
+
+
+    <!-- Sezione Servizi -->
     <section id="servizi" class="services">
         <div class="container">
             <h2 class="section-title">I NOSTRI SERVIZI</h2>
             <div class="services-grid">
+
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Lavori di movimento terra"></div>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
                     <h3>Lavori di movimento terra</h3>
                     <p>Scavi residenziali e industriali di ogni dimensione con macchinari all'avanguardia</p>
                     <a href="servizi/lavoridimovimentoterra.html" class="learn-more">Scopri di più</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Autotrasporti"></div>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
                     <h3>Autotrasporti</h3>
                     <p>Demolizioni controllate di edifici e strutture con massima sicurezza</p>
                     <a href="servizi/autotrasporti.html" class="learn-more">Scopri di più</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Lavori stradali ed edili"></div>
-                    <h3>Lavori stradali ed edili</h3>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
+                    <h3>Lavori stradadi ed edili</h3>
                     <p>Trasporto materiali e smaltimento rifiuti con mezzi specializzati</p>
                     <a href="servizi/lavoristradadiededili.html" class="learn-more">Scopri di più</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Servizi di pulizia"></div>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
                     <h3>Servizi di pulizia</h3>
                     <p>Livellamento terreni e preparazione aree edificabili</p>
                     <a href="servizi/servizidipulizie.html" class="learn-more">Scopri di più</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Gestione e manutenzione del verde"></div>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
                     <h3>Gestione e manutenzione del verde</h3>
                     <p>Realizzazione e manutenzione di strade e infrastrutture</p>
                     <a href="servizi/gestioneemanutenzionedelverde.html" class="learn-more">Scopri di più</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Noleggio piattaforma aerea"></div>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
                     <h3>Noleggio piattaforma aerea</h3>
                     <p>Gestione completa dei rifiuti edili secondo normativa vigente</p>
                     <a href="servizi/noleggiopiattaformaerea.html" class="learn-more">Scopri di più</a>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-image"><img src="fotocopertina/escavatore.png" alt="Impianti eolici e fotovoltaici"></div>
+                    <div class="service-image">
+                     <img src="fotocopertina/escavatore.png" alt="Descrizione"> </div>
                     <h3>Costruzione e gestione impianti eolici e fotovoltaici</h3>
                     <p>Gestione completa dei rifiuti edili secondo normativa vigente</p>
                     <a href="servizi/impianti.html" class="learn-more">Scopri di più</a>
                 </div>
+                
             </div>
         </div>
     </section>
 
-    <!-- LOGHI PARTNER -->
-    <section class="partner-logos-bar">
-        <h2 class="partner-bar-title">Le aziende che ci scelgono</h2>
-        <div class="logos-wrapper">
-            <button class="logo-arrow left" aria-label="Scorri a sinistra">
-                <!-- Freccia sinistra SVG -->
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:block;">
-                    <circle cx="16" cy="16" r="16" fill="#eaf3fb"/>
-                    <path d="M19 10L13 16L19 22" stroke="#3693c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <div class="logos-scroll" id="logosScroll">
-                <img src="sponsor/erg.png" alt="Partner 1" class="partner-logo">
-                <img src="sponsor/ivpc.png" alt="Partner 2" class="partner-logo">
-                <img src="sponsor/caggiano.png" alt="Partner 3" class="partner-logo">
-                <img src="partner4.png" alt="Partner 4" class="partner-logo">
-            </div>
-            <button class="logo-arrow right" aria-label="Scorri a destra">
-                <!-- Freccia destra SVG -->
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:block;">
-                    <circle cx="16" cy="16" r="16" fill="#eaf3fb"/>
-                    <path d="M13 10L19 16L13 22" stroke="#3693c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </section>
 
-    <!-- ATTREZZATURE -->
+<!-- Fascia loghi partner -->
+   <!-- <h2 class="partner-bar-title">Le aziende che ci scelgono</h2>-->
+<section class="partner-logos-bar">
+    <h2 class="partner-bar-title">Le aziende che ci scelgono</h2>
+  <div class="logos-wrapper">
+    <button class="logo-arrow left" aria-label="Scorri a sinistra">
+      <!-- Freccia sinistra SVG -->
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:block;">
+        <circle cx="16" cy="16" r="16" fill="#eaf3fb"/>
+        <path d="M19 10L13 16L19 22" stroke="#3693c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="logos-scroll" id="logosScroll">
+      <img src="sponsor/erg.png" alt="Partner 1" class="partner-logo">
+      <img src="sponsor/ivpc.png" alt="Partner 2" class="partner-logo">
+      <img src="sponsor/caggiano.png" alt="Partner 3" class="partner-logo">
+      <img src="partner4.png" alt="Partner 4" class="partner-logo">
+      <!-- aggiungi altri loghi -->
+    </div>
+    <button class="logo-arrow right" aria-label="Scorri a destra">
+      <!-- Freccia destra SVG -->
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:block;">
+        <circle cx="16" cy="16" r="16" fill="#eaf3fb"/>
+        <path d="M13 10L19 16L13 22" stroke="#3693c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
+
+    
+    <!-- Sezione Attrezzature -->
     <section id="attrezzature" class="equipment">
         <div class="container">
             <h2 class="section-title">I NOSTRI MEZZI</h2>
             <p class="section-intro">Parco mezzi moderno e sempre aggiornato</p>
             <div class="equipment-grid">
-                <div class="equipment-item">
-                    <div class="equipment-image"><img src="fotocopertina/escavatore.png" alt="Escavatori"></div>
-                    <h3>Escavatori</h3>
+                
+                
+                  <div class="equipment-item">
+                  <div class="equipment-image">
+                  <img src="fotocopertina/escavatore.png" alt="Nome mezzo"> </div>
+                    <h4>Escavatori</h4>
                     <p>Escavatori di varie dimensioni da 3 a 30 tonnellate</p>
                     <a href="mezzi/escavatori.html" class="learn-more">Scopri di più</a>
                 </div>
-                <div class="equipment-item">
-                    <div class="equipment-image"><img src="fotocopertina/escavatore.png" alt="Pale meccaniche"></div>
-                    <h3>Pale Meccaniche</h3>
+                
+                
+                  <div class="equipment-item">
+                  <div class="equipment-image">
+                  <img src="fotocopertina/escavatore.png" alt="Nome mezzo"> </div>
+                    <h4>Pale Meccaniche</h4>
                     <p>Pale gommate e cingolate per ogni tipo di terreno</p>
                     <a href="mezzi/palemeccaniche.html" class="learn-more">Scopri di più</a>
                 </div>
-                <div class="equipment-item">
-                    <div class="equipment-image"><img src="fotocopertina/escavatore.png" alt="Autocarri"></div>
-                    <h3>Autocarri</h3>
+                
+                
+                  <div class="equipment-item">
+                  <div class="equipment-image">
+                  <img src="fotocopertina/escavatore.png" alt="Nome mezzo"> </div>
+                    <h4>Autocarri</h4>
                     <p>Flotta di autocarri per trasporto materiali</p>
                     <a href="mezzi/autocarri.html" class="learn-more">Scopri di più</a>
                 </div>
-                <div class="equipment-item">
-                    <div class="equipment-image"><img src="fotocopertina/escavatore.png" alt="Rulli compattatori"></div>
-                    <h3>Rulli Compattatori</h3>
+                
+                
+                  <div class="equipment-item">
+                  <div class="equipment-image">
+                  <img src="fotocopertina/escavatore.png" alt="Nome mezzo"> </div>
+                    <h4>Rulli Compattatori</h4>
                     <p>Attrezzature per compattazione e livellamento</p>
                     <a href="mezzi/rullicompattatori.html" class="learn-more">Scopri di più</a>
                 </div>
-                <div class="equipment-item">
-                    <div class="equipment-image"><img src="fotocopertina/escavatore.png" alt="Le nostre attrezzature"></div>
-                    <h3>Le nostre attrezzature</h3>
+                
+                  <div class="equipment-item">
+                  <div class="equipment-image">
+                  <img src="fotocopertina/escavatore.png" alt="Nome mezzo"> </div>
+                    <h4>Le nostre attrezzature</h4>
                     <p>Attrezzature varie per i lavori</p>
                     <a href="mezzi/attrezzature.html" class="learn-more">Scopri di più</a>
                 </div>
+                
             </div>
         </div>
     </section>
 
-    <!-- CHI SIAMO -->
+    <!-- Sezione Chi Siamo 
     <section id="azienda" class="about">
         <div class="container">
             <div class="about-content">
@@ -178,18 +224,31 @@
                     <p>Con oltre 40 anni di esperienza nel settore, la nostra azienda si è affermata come punto di riferimento per interventi di scavo, demolizione e movimento terra in tutta la regione.</p>
                     <p>La conduzione familiare, unita alla professionalità e all'utilizzo di macchinari all'avanguardia, ci permette di offrire servizi di qualità superiore mantenendo un rapporto diretto e personale con ogni cliente.</p>
                     <div class="values">
-                        <div class="value-item"><div class="value-icon">✓</div><span>Oltre 40 anni di esperienza</span></div>
-                        <div class="value-item"><div class="value-icon">✓</div><span>Conduzione familiare</span></div>
-                        <div class="value-item"><div class="value-icon">✓</div><span>Macchinari moderni</span></div>
-                        <div class="value-item"><div class="value-icon">✓</div><span>Personale qualificato</span></div>
+                        <div class="value-item">
+                            <div class="value-icon">✓</div>
+                            <span>Oltre 40 anni di esperienza</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">✓</div>
+                            <span>Conduzione familiare</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">✓</div>
+                            <span>Macchinari moderni</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">✓</div>
+                            <span>Personale qualificato</span>
+                        </div>
                     </div>
                 </div>
                 <div class="about-image company-photo"></div>
             </div>
         </div>
     </section>
+   -->
 
-    <!-- CONTATTI -->
+    <!-- Sezione Contatti -->
     <section id="contatti" class="contact">
         <div class="container">
             <h2 class="section-title">CONTATTACI</h2>
@@ -210,32 +269,37 @@
                         <div class="contact-item">
                             <strong>📍 Sede:</strong>
                             <p>85023 Forenza (PZ)</p>
-                            <p>C.da San Cataldo, <a href="https://maps.app.goo.gl/khSYK9Sf957rLQNH8" target="_blank" rel="noopener noreferrer">Sede</a></p>
+                    <p>C.da San Cataldo, <a href="https://maps.app.goo.gl/khSYK9Sf957rLQNH8" target="_blank" rel="noopener noreferrer">Sede</a>  (PZ)</p>
                         </div>
                         <div class="contact-item">
                             <strong>⏰ Orari:</strong>
-                            <p>Lun-Ven: 7:00-18:00<br>Sab: 7:00-18:00 (orario variabile)</p>
+                            <p>Lun-Ven: 7:00-18:00<br>Sab: 7:00-18:00 (orario variabiele)</p>
                         </div>
                     </div>
                 </div>
+                
                 <form class="contact-form" action="https://formspree.io/f/mzzjldjk" method="POST">
                     <input type="hidden" name="_subject" value="Nuova richiesta da Zotta General Service">
                     <input type="hidden" name="_next" value="https://tuosito.github.io/grazie.html">
+                    
                     <input type="text" name="name" placeholder="Nome e Cognome" required>
                     <input type="email" name="_replyto" placeholder="Email" required>
                     <input type="tel" name="phone" placeholder="Telefono" required>
                     <textarea rows="5" name="message" placeholder="Messaggio" required></textarea>
+                    
                     <input type="text" name="_gotcha" style="display:none">
+                    
                     <button type="submit" class="submit-button">INVIA RICHIESTA</button>
                 </form>
             </div>
+            
             <div id="form-message" style="display:none; text-align:center; margin-top:20px; padding:20px; background:#d4edda; color:#155724; border-radius:8px;">
                 ✓ Grazie! Il tuo messaggio è stato inviato con successo.
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -244,13 +308,14 @@
                     <p>Impresa di scavi, demolizioni e movimento terra dal 2015</p>
                     <p class="footer-tagline">Semplicità, Cortesia, Disponibilità</p>
                 </div>
+                
                 <div class="footer-section">
                     <h4>CONTATTI</h4>
                     <p>📞 +39 388 923 3351</p>
                     <p>📞 +39 349 875 0636</p>
                     <p>📧 zottageneralservice@hotmail.com</p>
                     <p>📍85023 Forenza (PZ)</p>
-                    <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/khSYK9Sf957rLQNH8" target="_blank" rel="noopener noreferrer">Sede</a></p>
+                    <p>📍 C.da San Cataldo, <a href="https://maps.app.goo.gl/khSYK9Sf957rLQNH8" target="_blank" rel="noopener noreferrer">Sede</a>  (PZ)</p>
                     <p>📝 P.IVA: 01933620765</p>
                 </div>
                 <div class="footer-section">
@@ -266,46 +331,59 @@
         </div>
     </footer>
 
-    <!-- JS HAMBURGER + INTERATTIVITÀ -->
     <script>
+        // Toggle menu hamburger
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         const navLinks = document.querySelectorAll('.nav-link');
+
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
+
+        // Chiudi il menu quando clicchi su un link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
-        // Smooth scrolling per i link di navigazione
+
+    // Smooth scrolling per i link di navigazione
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                // Previeni solo se è un link interno (inizia con #)
                 if (this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
+                e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                });
+            }
+        }
+    });
+});
+
+
         // Logo bar scroll
-        const logosScroll = document.getElementById('logosScroll');
-        document.querySelector('.logo-arrow.left').onclick = function () {
-            logosScroll.scrollBy({ left: -220, behavior: 'smooth' });
+const logosScroll = document.getElementById('logosScroll');
+document.querySelector('.logo-arrow.left').onclick = function () {
+  logosScroll.scrollBy({ left: -220, behavior: 'smooth' });
+};
+document.querySelector('.logo-arrow.right').onclick = function () {
+  logosScroll.scrollBy({ left: 220, behavior: 'smooth' });
+};
+
+
+        // Animazione al scroll per gli elementi
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
-        document.querySelector('.logo-arrow.right').onclick = function () {
-            logosScroll.scrollBy({ left: 220, behavior: 'smooth' });
-        };
-        // Intersection animation
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -314,12 +392,14 @@
                 }
             });
         }, observerOptions);
+
         document.querySelectorAll('.service-card, .equipment-item').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
+
         // Navbar shadow on scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
