@@ -1,6 +1,23 @@
 /*CSS PER IMMAGINI DI COPERTINA*/
 /* IMMAGINE DI COPERTINA MODERNA E DINAMICA */
+/* GRIGLIE RESPONSIVE */
+.services-grid,
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+@media (max-width: 600px) {
+    .services-grid,
+    .equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+/* CARD: responsive e senza padding */
 .service-card, .equipment-item {
+    width: 100%;
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
@@ -9,25 +26,23 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* Cambiato da center a stretch: immagini sempre a filo */
-    padding: 0;           /* NESSUN PADDING nemmeno sotto */
+    align-items: stretch;
+    padding: 0;
 }
 
-/* IMMAGINE COPERTINA “FULL WIDTH” SENZA MARGINI */
+/* COPERTINA FULL WIDTH */
 .service-image, .equipment-image {
     width: 100%;
-    max-width: 100%;
     aspect-ratio: 16/9;
     background-color: #217da3;
     border-radius: 15px 15px 8px 8px;
     overflow: hidden;
     display: block;
-    margin: 0;                 /* SENZA margini in nessun lato */
+    margin: 0;
     box-shadow: 0 5px 24px rgba(0,102,204,0.11), 0 1px 2px rgba(0,0,0,0.10);
     transition: box-shadow 0.28s, transform 0.22s;
     position: relative;
 }
-
 .service-image img, .equipment-image img {
     width: 100%;
     height: 100%;
@@ -37,7 +52,6 @@
     filter: brightness(0.98) saturate(1.12);
     transition: filter 0.25s, transform 0.23s;
 }
-
 .service-image:hover, .equipment-image:hover {
     box-shadow: 0 15px 32px rgba(0,102,204,0.26), 0 2px 8px rgba(0,0,0,0.14);
     transform: scale(1.045) rotate(-0.5deg);
@@ -77,6 +91,7 @@
     font-size: 25px;
     color: var(--primary-blue);
 }
+
 
 
 
@@ -503,9 +518,10 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
 }
+
 
 
 
