@@ -1,6 +1,6 @@
 /*CSS PER IMMAGINI DI COPERTINA*/
 /* IMMAGINE DI COPERTINA MODERNA E DINAMICA */
-.service-card {
+.service-card, .equipment-item {
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
@@ -9,19 +9,20 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 0 15px 0;
+    align-items: stretch; /* Cambiato da center a stretch: immagini sempre a filo */
+    padding: 0;           /* NESSUN PADDING nemmeno sotto */
 }
 
+/* IMMAGINE COPERTINA “FULL WIDTH” SENZA MARGINI */
 .service-image, .equipment-image {
-    width: 95%;
-    max-width: 350px;
+    width: 100%;
+    max-width: 100%;
     aspect-ratio: 16/9;
     background-color: #217da3;
-    border-radius: 16px 16px 8px 8px;
+    border-radius: 15px 15px 8px 8px;
     overflow: hidden;
     display: block;
-    margin: 0 auto;
+    margin: 0;                 /* SENZA margini in nessun lato */
     box-shadow: 0 5px 24px rgba(0,102,204,0.11), 0 1px 2px rgba(0,0,0,0.10);
     transition: box-shadow 0.28s, transform 0.22s;
     position: relative;
@@ -31,7 +32,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 16px 16px 8px 8px;
+    border-radius: 15px 15px 8px 8px;
     display: block;
     filter: brightness(0.98) saturate(1.12);
     transition: filter 0.25s, transform 0.23s;
@@ -51,7 +52,7 @@
     left: 0; top: 0;
     width: 100%; height: 100%;
     pointer-events: none;
-    border-radius: 16px 16px 8px 8px;
+    border-radius: 15px 15px 8px 8px;
     background: linear-gradient(90deg,rgba(0,0,0,0.05) 0%,rgba(93,173,226,0.09) 100%);
     opacity: 0;
     transition: opacity 0.23s;
@@ -61,7 +62,6 @@
 }
 @media (max-width: 600px) {
     .service-image, .equipment-image {
-        max-width: 98vw;
         border-radius: 11px 11px 6px 6px;
     }
     .service-image img, .equipment-image img {
@@ -71,11 +71,13 @@
         border-radius: 11px 11px 6px 6px;
     }
 }
-.service-card h3 {
+
+.service-card h3, .equipment-item h4 {
     margin-top: 14px;
     font-size: 25px;
     color: var(--primary-blue);
 }
+
 
 
 
