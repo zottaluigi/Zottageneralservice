@@ -296,6 +296,7 @@ header {
     margin-bottom: 22px;   /* spazio sotto la foto */
     margin-left: 10px;     /* spazio sinistra */
     margin-right: 10px;    /* spazio destra */
+    margin-top: 10px;
 }
 .card-image img {
     width: 100%;
