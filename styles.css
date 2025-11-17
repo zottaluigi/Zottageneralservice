@@ -265,14 +265,15 @@ header {
 /* ========== GRIGLIE (SERVIZI, ATTREZZATURE) ========== */
 .services-grid, .equipment-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* non troppo larghe */
     gap: 28px;
     justify-items: center;
 }
 
+
 .card {
     width: 100%;
-    max-width: 520px;
+    max-width: 395px;   /* Perfetta tra compattezza e spaziosità */
     background: var(--white);
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -285,13 +286,14 @@ header {
     margin-bottom: 20px;
 }
 
+
 .card-image {
-    width: 100%;
+    width: calc(100% - 32px);     /* Spazio laterale: 16px a sinistra + 16px a destra */
+    margin: 0 auto 22px auto;     /* Centro l'immagine e spazio sotto */
     aspect-ratio: 16/9;
     background-color: #217da3;
     border-radius: 15px 15px 8px 8px;
     overflow: hidden;
-    margin-bottom: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -307,6 +309,7 @@ header {
     display: block;
     box-sizing: border-box;
 }
+
 .card-image:hover {
     box-shadow: 0 15px 32px rgba(0,102,204,0.26), 0 2px 8px rgba(0,0,0,0.14);
     transform: scale(1.045) rotate(-0.5deg);
