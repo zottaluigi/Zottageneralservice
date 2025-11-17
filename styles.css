@@ -287,8 +287,8 @@ header {
 
 /* IMMAGINI IN COPERTINA CON MARGINI */
 .card-image {
-    width: calc(100% - 32px);    /* margine orizzontale di 16px per lato */
-    margin: 0 auto 20px auto;    /* auto-centra + spazio sotto */
+    width: calc(100% - 32px);       /* margine orizzontale: 16px per lato */
+    margin: 16px auto 20px auto;    /* margine alto: 16px, basso: 20px, centrato orizzontalmente */
     aspect-ratio: 16/9;
     background-color: #217da3;
     border-radius: 15px 15px 8px 8px;
@@ -298,6 +298,7 @@ header {
     justify-content: center;
     box-sizing: border-box;
 }
+
 
 .card-image img {
     width: 100%;
