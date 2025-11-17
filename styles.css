@@ -293,6 +293,9 @@ header {
     box-shadow: 0 5px 24px rgba(0,102,204,0.11), 0 1px 2px rgba(0,0,0,0.10);
     transition: box-shadow 0.28s, transform 0.22s;
     position: relative;
+    margin-bottom: 22px;   /* spazio sotto la foto */
+    margin-left: 10px;     /* spazio sinistra */
+    margin-right: 10px;    /* spazio destra */
 }
 .card-image img {
     width: 100%;
