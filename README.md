@@ -4,6 +4,8 @@ puoi scrivere i dettagli per favore cosi posso andare avanti il piu' possibile
 tipo le aziende piu grandi che collaborano perche so solo la erg poi magari scrivi come vorresti fare e cosa vorresti fare qua piu nel dettagli 
 tipo le suddivisioni e cose simili 
 
+-
+
 AZIENDE PER SPONSOR
 
 -ERG (messo)
@@ -19,6 +21,10 @@ AZIENDE PER SPONSOR
 -Sardone
 
 -(LE ALTRE POI LE CHIEDO A ZIO)
+
+-
+
+
 CHECK-LIST
 
 -Inserire gli sponsor
@@ -34,6 +40,8 @@ CHECK-LIST
 -capire come organizzare le cartelle per la suddivisione dentro i servizi
 
 -aggiungere le immagini di copertina sui servizi e sui mezzi della pagina principale 
+
+-
 
 
 ELENCO MEZZI
