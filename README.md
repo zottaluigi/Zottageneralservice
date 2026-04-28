@@ -38,7 +38,7 @@ CHECK-LIST
 
 -aggiungere le immagini di copertina sui servizi e sui mezzi della pagina principale 
 
--
+- cambiare video perchè fa schifo
 
 
 
