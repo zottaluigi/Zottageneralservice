@@ -1,8 +1,5 @@
 # Zottageneralservice
 
-puoi scrivere i dettagli per favore cosi posso andare avanti il piu' possibile
-tipo le aziende piu grandi che collaborano perche so solo la erg poi magari scrivi come vorresti fare e cosa vorresti fare qua piu nel dettagli 
-tipo le suddivisioni e cose simili 
 
 -
 
@@ -12,7 +9,7 @@ AZIENDE PER SPONSOR
 
 -IVPC (messo)
 
--CAGGIANO "Il parco delle bontà"(mi pare si chiami così) (messo)
+-CAGGIANO "Il parco delle bontà" (messo)
 
 -Cifarelli
 
@@ -29,7 +26,7 @@ CHECK-LIST
 
 -Inserire gli sponsor
 
--Foto dei mezzi
+-Foto dei mezzi (messi quasi tutti)
 
 -Foto di tutti i servizi
 
@@ -44,44 +41,5 @@ CHECK-LIST
 -
 
 
-ELENCO MEZZI
-
--3 camion 
-
-330-36
-
-MAN TGA41.480
-
-camioncino
-
-
-
--2 carrelloni 
-
-
--5 escavatori
-
-Fiat-hitachi EX215
-
-New holland Kobelco E215
-
-Case CX210E
-
-Case CX130D
-
-Hitachi Zaxis 38U
-
-
--1 greder
-
--1 rullo
-
-Bomas
-
-
--1 palacingolata
-
-
--1 palagommata
 
 
